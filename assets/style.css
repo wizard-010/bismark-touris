@@ -1233,4 +1233,168 @@ footer {
                 margin: 1.5rem 0;
             }
         }
+
+/* ========== BLOG POST PAGE STYLES ========== */
+
+/* Blog Post Container */
+.blog-post-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.blog-post-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.blog-post-title {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.blog-post-meta {
+    color: #6c757d;
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.blog-post-meta i {
+    margin-right: 0.4rem;
+}
+
+.blog-post-content {
+    line-height: 1.8;
+}
+
+.blog-post-content h2 {
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1rem;
+}
+
+.blog-post-content h3 {
+    color: var(--secondary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.blog-post-content p {
+    margin-bottom: 1.2rem;
+}
+
+/* Blog Image */
+.blog-post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+}
+
+/* In-line Ad Styles */
+.inline-ad {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.inline-ad:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.inline-ad .ad-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.inline-ad ins.adsbygoogle {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Ad Container Improvements */
+.ad-container {
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.top-ad {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.bottom-ad {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    clear: both;
+}
+
+/* Ensure bottom ad has space */
+main .bottom-ad {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .blog-post-container {
+        padding: 1.5rem;
+    }
     
+    .blog-post-title {
+        font-size: 1.6rem;
+    }
+    
+    .inline-ad {
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .ad-container {
+        min-height: 60px;
+        margin: 1rem 0;
+    }
+    
+    .bottom-ad {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .blog-post-container {
+        padding: 1rem;
+    }
+    
+    .blog-post-title {
+        font-size: 1.4rem;
+    }
+    
+    .ad-container {
+        min-height: 50px;
+        margin: 0.75rem 0;
+    }
+}
