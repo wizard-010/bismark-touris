@@ -85,7 +85,6 @@ header {
 /* Header Text - Enhanced Visibility */
 .header-text {
     text-align: center;
-    
 }
 
 .header-text h1 {
@@ -249,6 +248,7 @@ footer {
 .about-privacy {
     margin-bottom: 1rem;
 }
+
 .about-privacy a {
     color: var(--light-color);
     border: #ffd966 1px solid;
@@ -258,8 +258,9 @@ footer {
     margin: 0 0.5rem;
     transition: opacity 0.3s ease;
     text-decoration: none;
-     font-family: 'Ubuntu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Ubuntu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .about-privacy a:hover {
     opacity: 0.8;
     color: var(--accent-color);
@@ -299,6 +300,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .top-ad {
@@ -308,7 +310,8 @@ footer {
 
 .bottom-ad {
     margin-top: 2rem;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
+    clear: both;
 }
 
 .in-content-ad {
@@ -1197,43 +1200,6 @@ footer {
     color: white;
 }
 
-
-        /* In-line ad styles for blog posts */
-        .inline-ad {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            text-align: center;
-            border: 1px solid #dee2e6;
-            transition: all 0.3s ease;
-        }
-        
-        .inline-ad:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .inline-ad .ad-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        .inline-ad ins.adsbygoogle {
-            display: block;
-            margin: 0 auto;
-        }
-        
-        @media (max-width: 768px) {
-            .inline-ad {
-                padding: 1rem;
-                margin: 1.5rem 0;
-            }
-        }
-
 /* ========== BLOG POST PAGE STYLES ========== */
 
 /* Blog Post Container */
@@ -1326,37 +1292,6 @@ footer {
 .inline-ad ins.adsbygoogle {
     display: block;
     margin: 0 auto;
-}
-
-/* Ad Container Improvements */
-.ad-container {
-    margin: 1.5rem 0;
-    text-align: center;
-    overflow: hidden;
-    border-radius: 8px;
-    background-color: #f5f5f5;
-    min-height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.top-ad {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-.bottom-ad {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    clear: both;
-}
-
-/* Ensure bottom ad has space */
-main .bottom-ad {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
 }
 
 /* Responsive adjustments */
