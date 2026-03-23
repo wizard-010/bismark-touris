@@ -1196,3 +1196,41 @@ footer {
     background: var(--accent-color);
     color: white;
 }
+
+
+        /* In-line ad styles for blog posts */
+        .inline-ad {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+        }
+        
+        .inline-ad:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .inline-ad .ad-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .inline-ad ins.adsbygoogle {
+            display: block;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .inline-ad {
+                padding: 1rem;
+                margin: 1.5rem 0;
+            }
+        }
+    
