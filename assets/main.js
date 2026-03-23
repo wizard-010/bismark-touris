@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ========== IMAGE ALT TEXT MAPPING ==========
-    // Easy to update - just modify the alt text for each image number
     const imageAltMapping = {
         "0001": "Tourists at the Rabaul Hotsprings - Mt. Tavurvur in the background",
         "0002": "Rabaul Hotsprings",
@@ -90,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
         "0044": "Cruise Ship docked at Simpson Harbour - Passengers exploring the port",
         "0045": "Kokopo Beach Bungalows Catwalk",
         "0046": "Cruise Ship docked at Simpson Harbour - Passengers exploring the port"
-      
     };
     
     // ========== GENERATE 46 IMAGES (0001.jpeg to 0046.jpeg) ==========
@@ -103,11 +101,20 @@ document.addEventListener('DOMContentLoaded', function() {
         imagePaths.push(`img/${imageNumber}.jpeg`);
     }
     
-    // ========== GALLERY GRID GENERATION ==========
+    // ========== GALLERY GRID GENERATION WITH IN-LINE ADS ==========
     const galleryGrid = document.getElementById('galleryGrid');
     
     if (galleryGrid) {
-        imagePaths.forEach((path, index) => {
+        // Clear any existing content
+        galleryGrid.innerHTML = '';
+        
+        // Configuration for ads - REPLACE THESE WITH YOUR ACTUAL AD SENSE SLOT IDs
+        const ADSENSE_CLIENT_ID = 'ca-pub-3116480965868234'; // Replace with your AdSense client ID
+        const INLINE_AD_SLOT_ID = '3333333333'; // Replace with your inline ad slot ID
+        const AD_POSITION_INTERVAL = 4; // Insert ad after every 4 images
+        
+        // Function to create a gallery item
+        function createGalleryItem(path, index) {
             const imageNumber = (index + 1).toString().padStart(4, '0');
             const altText = imageAltMapping[imageNumber] || `Beautiful Destination ${imageNumber}`;
             
@@ -117,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const img = document.createElement('img');
             img.src = path;
             img.alt = altText;
+            img.loading = 'lazy';
             
             const caption = document.createElement('div');
             caption.className = 'gallery-caption';
@@ -125,8 +133,50 @@ document.addEventListener('DOMContentLoaded', function() {
             galleryItem.appendChild(img);
             galleryItem.appendChild(caption);
             
-            galleryGrid.appendChild(galleryItem);
+            return galleryItem;
+        }
+        
+        // Function to create an in-line ad unit
+        function createInlineAd(adIndex) {
+            const adContainer = document.createElement('div');
+            adContainer.className = 'gallery-ad-item';
+            adContainer.setAttribute('data-ad-index', adIndex);
+            
+            adContainer.innerHTML = `
+                <div class="ad-label">Advertisement</div>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="${ADSENSE_CLIENT_ID}"
+                     data-ad-slot="${INLINE_AD_SLOT_ID}"
+                     data-ad-format="rectangle"
+                     data-full-width-responsive="true"></ins>
+                <div class="ad-note">Sponsored Content</div>
+            `;
+            
+            return adContainer;
+        }
+        
+        // Build gallery with images and ads
+        imagePaths.forEach((path, index) => {
+            // Add the gallery item
+            galleryGrid.appendChild(createGalleryItem(path, index));
+            
+            // Insert ad after every X images (but not after the last image)
+            if ((index + 1) % AD_POSITION_INTERVAL === 0 && index + 1 < totalImages) {
+                const adContainer = createInlineAd(Math.floor((index + 1) / AD_POSITION_INTERVAL));
+                galleryGrid.appendChild(adContainer);
+            }
         });
+        
+        // Load all ads after gallery is built
+        setTimeout(() => {
+            if (typeof adsbygoogle !== 'undefined') {
+                const allAdIns = galleryGrid.querySelectorAll('.gallery-ad-item ins.adsbygoogle');
+                allAdIns.forEach(() => {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                });
+            }
+        }, 100);
     }
     
     // ========== CAROUSEL FUNCTIONALITY (for index.html only) ==========
@@ -139,6 +189,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Only run carousel code if carousel elements exist (on index.html)
     if (carouselImage && carouselThumbs) {
         let currentIndex = 0;
+        
+        // Clear any existing thumbnails
+        carouselThumbs.innerHTML = '';
         
         // Generate thumbnails
         imagePaths.forEach((path, index) => {
