@@ -2,6 +2,41 @@
 // Hamburger Menu Toggle for Small Screens Only
 
 document.addEventListener('DOMContentLoaded', function() {
+    // ========== PROTECTION: Disable Right-Click ==========
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    }, false);
+    
+    // ========== PROTECTION: Disable Keyboard Shortcuts ==========
+    document.addEventListener('keydown', function(e) {
+        // Disable F12
+        if (e.key === 'F12') {
+            e.preventDefault();
+            return false;
+        }
+        // Disable Ctrl+Shift+I (DevTools)
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+            e.preventDefault();
+            return false;
+        }
+        // Disable Ctrl+Shift+J (Console)
+        if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+            e.preventDefault();
+            return false;
+        }
+        // Disable Ctrl+U (View Source)
+        if (e.ctrlKey && e.key === 'u') {
+            e.preventDefault();
+            return false;
+        }
+        // Disable Ctrl+S (Save)
+        if (e.ctrlKey && e.key === 's') {
+            e.preventDefault();
+            return false;
+        }
+    });
+    
     // ========== HAMBURGER MENU FUNCTIONALITY ==========
     const hamburgerBtn = document.getElementById('hamburgerToggle');
     const navMenu = document.getElementById('navMenu');
@@ -95,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalImages = 46;
     const imagePaths = [];
     
-    // Generate image paths from 0001.jpeg to 0046.jpeg
     for (let i = 1; i <= totalImages; i++) {
         const imageNumber = i.toString().padStart(4, '0');
         imagePaths.push(`img/${imageNumber}.jpeg`);
@@ -105,15 +139,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const galleryGrid = document.getElementById('galleryGrid');
     
     if (galleryGrid) {
-        // Clear any existing content
         galleryGrid.innerHTML = '';
         
-        // Configuration for ads - REPLACE THESE WITH YOUR ACTUAL AD SENSE SLOT IDs
-        const ADSENSE_CLIENT_ID = 'ca-pub-3116480965868234'; // Replace with your AdSense client ID
-        const INLINE_AD_SLOT_ID = '3333333333'; // Replace with your inline ad slot ID
-        const AD_POSITION_INTERVAL = 4; // Insert ad after every 4 images
+        // CONFIGURATION - REPLACE WITH YOUR ACTUAL AD SENSE SLOT IDs
+        const ADSENSE_CLIENT_ID = 'ca-pub-3116480965868234';
+        const INLINE_AD_SLOT_ID = '3333333333';
+        const AD_POSITION_INTERVAL = 4;
         
-        // Function to create a gallery item
         function createGalleryItem(path, index) {
             const imageNumber = (index + 1).toString().padStart(4, '0');
             const altText = imageAltMapping[imageNumber] || `Beautiful Destination ${imageNumber}`;
@@ -136,7 +168,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return galleryItem;
         }
         
-        // Function to create an in-line ad unit
         function createInlineAd(adIndex) {
             const adContainer = document.createElement('div');
             adContainer.className = 'gallery-ad-item';
@@ -156,19 +187,15 @@ document.addEventListener('DOMContentLoaded', function() {
             return adContainer;
         }
         
-        // Build gallery with images and ads
         imagePaths.forEach((path, index) => {
-            // Add the gallery item
             galleryGrid.appendChild(createGalleryItem(path, index));
             
-            // Insert ad after every X images (but not after the last image)
             if ((index + 1) % AD_POSITION_INTERVAL === 0 && index + 1 < totalImages) {
                 const adContainer = createInlineAd(Math.floor((index + 1) / AD_POSITION_INTERVAL));
                 galleryGrid.appendChild(adContainer);
             }
         });
         
-        // Load all ads after gallery is built
         setTimeout(() => {
             if (typeof adsbygoogle !== 'undefined') {
                 const allAdIns = galleryGrid.querySelectorAll('.gallery-ad-item ins.adsbygoogle');
@@ -186,14 +213,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const carouselNext = document.getElementById('carouselNext');
     const imageCounter = document.getElementById('imageCounter');
     
-    // Only run carousel code if carousel elements exist (on index.html)
     if (carouselImage && carouselThumbs) {
         let currentIndex = 0;
         
-        // Clear any existing thumbnails
         carouselThumbs.innerHTML = '';
         
-        // Generate thumbnails
         imagePaths.forEach((path, index) => {
             const imageNumber = (index + 1).toString().padStart(4, '0');
             const img = document.createElement('img');
@@ -216,16 +240,13 @@ document.addEventListener('DOMContentLoaded', function() {
             carouselImage.src = imagePaths[currentIndex];
             carouselImage.alt = imageAltMapping[imageNumber] || `Image ${imageNumber}`;
             
-            // Update image counter
             if (imageCounter) {
                 imageCounter.textContent = `${currentIndex + 1} / ${totalImages}`;
             }
             
-            // Update active thumbnail
             thumbs.forEach((thumb, i) => {
                 if (i === currentIndex) {
                     thumb.classList.add('active');
-                    // Scroll thumbnail into view
                     thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
                 } else {
                     thumb.classList.remove('active');
@@ -248,7 +269,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (carouselPrev) carouselPrev.addEventListener('click', prevImage);
         if (carouselNext) carouselNext.addEventListener('click', nextImage);
         
-        // Auto-play functionality
         let autoPlayInterval;
         
         function startAutoPlay() {
