@@ -539,13 +539,6 @@ footer {
     box-shadow: #4a5568 0px 3px 10px 0px;
 }
 
-/* Annual Tour Packages Image */
-.annual-tour-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
 /* Homepage Newsflash Section */
 .newsflash {
     background: linear-gradient(135deg, var(--accent-color) 0%, #ff8c5a 100%);
