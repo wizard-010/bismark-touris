@@ -385,6 +385,23 @@ footer {
     color: var(--yellow-color);
 }
 
+/* Footer Social Links */
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--light-color);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: opacity 0.3s ease;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
+
 /* ========== CONTACT FRAME SECTION STYLES ========== */
 
 .contact-frame {
@@ -571,6 +588,13 @@ footer {
     border-radius: 10px;
     padding: 1rem;
     box-shadow: #4a5568 0px 3px 10px 0px;
+}
+
+/* Annual Tour Packages Image */
+.annual-tour-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 /* Homepage Newsflash Section */
