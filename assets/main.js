@@ -103,8 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-
-// ========== IMAGE ALT TEXT MAPPING ==========
+    // ========== IMAGE ALT TEXT MAPPING ==========
     const imageAltMapping = {
         "0001": "Tourists at the Rabaul Hotsprings - Mt. Tavurvur in the background",
         "0002": "Rabaul Hotsprings",
@@ -317,7 +316,4 @@ document.addEventListener('DOMContentLoaded', function() {
             carouselMain.addEventListener('mouseleave', startAutoPlay);
         }
     }
-});
-
-    
 });
