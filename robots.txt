@@ -6,6 +6,3 @@ Allow: /
 
 # Specify sitemap location
 Sitemap: https://wizard-010.github.io/bismark-touris/sitemap.xml
-
-# Crawl delay to be respectful to the server
-Crawl-delay: 1
