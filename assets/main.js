@@ -162,8 +162,61 @@ document.addEventListener('DOMContentLoaded', function() {
         imagePaths.push(`img/${imageNumber}.jpeg`);
     }
     
-    // ========== GALLERY GRID GENERATION ==========
+    // ========== GALLERY GRID GENERATION WITH LIGHTBOX ==========
     const galleryGrid = document.getElementById('galleryGrid');
+    
+    // Lightbox function
+    function openLightbox(imageSrc, imageAlt) {
+        // Create lightbox container
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.alt = imageAlt;
+        
+        const caption = document.createElement('div');
+        caption.className = 'caption';
+        caption.textContent = imageAlt;
+        
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'close-btn';
+        closeBtn.innerHTML = '✕';
+        closeBtn.setAttribute('aria-label', 'Close');
+        
+        lightbox.appendChild(img);
+        lightbox.appendChild(caption);
+        lightbox.appendChild(closeBtn);
+        document.body.appendChild(lightbox);
+        
+        // Prevent body scrolling
+        document.body.style.overflow = 'hidden';
+        
+        // Close lightbox function
+        function closeLightbox() {
+            if (document.body.contains(lightbox)) {
+                document.body.removeChild(lightbox);
+            }
+            document.body.style.overflow = '';
+            document.removeEventListener('keydown', escHandler);
+        }
+        
+        // ESC key handler
+        function escHandler(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        }
+        
+        // Close on click (background or close button)
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox || e.target === closeBtn) {
+                closeLightbox();
+            }
+        });
+        
+        document.addEventListener('keydown', escHandler);
+    }
     
     if (galleryGrid) {
         galleryGrid.innerHTML = '';
@@ -179,6 +232,11 @@ document.addEventListener('DOMContentLoaded', function() {
             img.src = path;
             img.alt = altText;
             img.loading = 'lazy';
+            
+            // Add click to open lightbox
+            img.addEventListener('click', function() {
+                openLightbox(path, altText);
+            });
             
             const caption = document.createElement('div');
             caption.className = 'gallery-caption';
