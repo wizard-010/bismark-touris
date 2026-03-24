@@ -1752,6 +1752,8 @@ footer {
     margin: 2rem 0;
     text-align: center;
     border-radius: 16px;
+    width: fit-content;
+    height: fit-content;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1763,10 +1765,10 @@ footer {
 }
 
 .poster-image {
-    width: 100%;
+    width: 50%;
     height: auto;
     display: block;
-    border-radius: 16px;
+    border-radius: 8px;
     transition: transform 0.3s ease;
 }
 
