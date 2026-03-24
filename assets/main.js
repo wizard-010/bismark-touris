@@ -316,4 +316,81 @@ document.addEventListener('DOMContentLoaded', function() {
             carouselMain.addEventListener('mouseleave', startAutoPlay);
         }
     }
+
+    // ========== CONTACT FORM HANDLER ==========
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value || 'Not provided';
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Show loading state
+            formStatus.className = 'form-status loading';
+            formStatus.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Sending your message...';
+            formStatus.style.display = 'block';
+            
+            // Disable submit button
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Sending...';
+            
+            try {
+                // Send to Email using FormSubmit.co
+                const emailFormData = new FormData();
+                emailFormData.append('Name', name);
+                emailFormData.append('Email', email);
+                emailFormData.append('Phone', phone);
+                emailFormData.append('Subject', subject);
+                emailFormData.append('Message', message);
+                
+                const emailResponse = await fetch('https://formsubmit.co/ajax/info@bismarktouris.com', {
+                    method: 'POST',
+                    body: emailFormData
+                });
+                
+                if (!emailResponse.ok) {
+                    throw new Error('Email sending failed');
+                }
+                
+                // Send WhatsApp notification (opens in new tab)
+                const whatsappMessage = `*NEW CONTACT FORM SUBMISSION*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Subject:* ${encodeURIComponent(subject)}%0A*Message:* ${encodeURIComponent(message)}%0A%0A_Sent from: Bismark Touris Website_`;
+                const whatsappUrl = `https://wa.me/67576769513?text=${whatsappMessage}`;
+                window.open(whatsappUrl, '_blank');
+                
+                // Show success message
+                formStatus.className = 'form-status success';
+                formStatus.innerHTML = '<i class="fas fa-check-circle"></i> ✓ Message sent successfully! We will contact you shortly via WhatsApp or email.';
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Auto-hide success message after 5 seconds
+                setTimeout(() => {
+                    formStatus.style.display = 'none';
+                }, 5000);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                formStatus.className = 'form-status error';
+                formStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i> ✗ Sorry, there was an error sending your message. Please try again or contact us directly via WhatsApp.';
+                
+                // Auto-hide error message after 5 seconds
+                setTimeout(() => {
+                    formStatus.style.display = 'none';
+                }, 5000);
+            } finally {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+            }
+        });
+    }
 });
