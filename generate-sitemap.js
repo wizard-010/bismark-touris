@@ -1,83 +1,74 @@
 // generate-sitemap.js
-// Run this script to generate sitemap.xml automatically
-
 const fs = require('fs');
 const path = require('path');
 
 // Configuration
-const siteUrl = 'https://wizard-010.github.io/bismark-touris';
-const today = new Date().toISOString().split('T')[0];
+const BASE_URL = 'https://wizard-010.github.io/bismark-touris';
+const OUTPUT_FILE = './sitemap.xml';
 
-// Define all pages (manually maintained for main pages)
-const pages = [
-    { url: '/', priority: 1.0, changefreq: 'weekly' },
-    { url: '/index.html', priority: 1.0, changefreq: 'weekly' },
-    { url: '/about.html', priority: 0.8, changefreq: 'monthly' },
-    { url: '/products.html', priority: 0.9, changefreq: 'weekly' },
-    { url: '/gallery.html', priority: 0.7, changefreq: 'monthly' },
-    { url: '/blog.html', priority: 0.8, changefreq: 'weekly' },
-    { url: '/contacts.html', priority: 0.8, changefreq: 'monthly' },
-    { url: '/privacy.html', priority: 0.5, changefreq: 'yearly' },
-];
-
-// Function to get all blog posts from the blog-posts folder
-function getBlogPosts() {
-    const blogPostsDir = path.join(__dirname, 'blog-posts');
-    const posts = [];
-    
-    if (fs.existsSync(blogPostsDir)) {
-        const files = fs.readdirSync(blogPostsDir);
-        files.forEach(file => {
-            if (file.endsWith('.html') && file !== 'index.html') {
-                // Get last modified date from file
-                const stats = fs.statSync(path.join(blogPostsDir, file));
-                const lastmod = stats.mtime.toISOString().split('T')[0];
-                posts.push({
-                    file: file,
-                    lastmod: lastmod
-                });
-            }
-        });
-    }
-    return posts;
+// Get current date
+function getCurrentDate() {
+    return new Date().toISOString().split('T')[0];
 }
 
-// Generate XML
+// Main pages
+const mainPages = [
+    { url: '/', lastmod: getCurrentDate(), priority: '1.0', changefreq: 'weekly' },
+    { url: '/blog.html', lastmod: getCurrentDate(), priority: '0.9', changefreq: 'weekly' },
+    { url: '/products.html', lastmod: getCurrentDate(), priority: '0.8', changefreq: 'monthly' },
+    { url: '/gallery.html', lastmod: getCurrentDate(), priority: '0.7', changefreq: 'monthly' },
+    { url: '/about.html', lastmod: getCurrentDate(), priority: '0.7', changefreq: 'monthly' },
+    { url: '/contacts.html', lastmod: getCurrentDate(), priority: '0.7', changefreq: 'monthly' },
+    { url: '/privacy.html', lastmod: getCurrentDate(), priority: '0.3', changefreq: 'yearly' },
+    { url: '/terms.html', lastmod: getCurrentDate(), priority: '0.3', changefreq: 'yearly' }
+];
+
+// Blog posts - Add new posts at the TOP
+const blogPosts = [
+    { url: '/blog-posts/goroka-show-2026.html', date: '2026-03-24' },
+    { url: '/blog-posts/village-homestays-tufi.html', date: '2026-03-24' },
+    { url: '/blog-posts/kokoda-trail-cost.html', date: '2026-03-24' },
+    { url: '/blog-posts/bird-of-paradise.html', date: '2026-03-24' },
+    { url: '/blog-posts/png-diving-liveaboards.html', date: '2026-03-24' },
+    { url: '/blog-posts/kokoda-track-trekking.html', date: '2026-03-24' },
+    { url: '/blog-posts/baining-fire-dance.html', date: '2026-03-24' },
+    { url: '/blog-posts/rabaul-volcanic-eruption-1994.html', date: '2026-03-15' },
+    { url: '/blog-posts/mt-tavurvur.html', date: '2026-03-10' },
+    { url: '/blog-posts/wwii-japanese-tunnels.html', date: '2026-03-05' },
+    { url: '/blog-posts/cruise-ship-kokopo.html', date: '2026-02-28' },
+    { url: '/blog-posts/bitapaka-war-cemetery.html', date: '2026-02-20' },
+    { url: '/blog-posts/school-visits.html', date: '2026-02-15' }
+];
+
 function generateSitemap() {
-    const blogPosts = getBlogPosts();
-    
-    let xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+    let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
+    sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
     
     // Add main pages
-    pages.forEach(page => {
-        xml += `
-    <url>
-        <loc>${siteUrl}${page.url}</loc>
-        <lastmod>${today}</lastmod>
-        <changefreq>${page.changefreq}</changefreq>
-        <priority>${page.priority}</priority>
-    </url>`;
+    mainPages.forEach(page => {
+        sitemap += '    <url>\n';
+        sitemap += `        <loc>${BASE_URL}${page.url}</loc>\n`;
+        sitemap += `        <lastmod>${page.lastmod}</lastmod>\n`;
+        sitemap += `        <changefreq>${page.changefreq}</changefreq>\n`;
+        sitemap += `        <priority>${page.priority}</priority>\n`;
+        sitemap += '    </url>\n';
     });
     
     // Add blog posts
     blogPosts.forEach(post => {
-        xml += `
-    <url>
-        <loc>${siteUrl}/blog-posts/${post.file}</loc>
-        <lastmod>${post.lastmod}</lastmod>
-        <changefreq>never</changefreq>
-        <priority>0.6</priority>
-    </url>`;
+        sitemap += '    <url>\n';
+        sitemap += `        <loc>${BASE_URL}${post.url}</loc>\n`;
+        sitemap += `        <lastmod>${post.date}</lastmod>\n`;
+        sitemap += '        <changefreq>monthly</changefreq>\n';
+        sitemap += '        <priority>0.6</priority>\n';
+        sitemap += '    </url>\n';
     });
     
-    xml += `
-</urlset>`;
+    sitemap += '</urlset>';
     
-    // Write to file
-    fs.writeFileSync(path.join(__dirname, 'sitemap.xml'), xml);
-    console.log(`✅ Sitemap generated successfully with ${blogPosts.length} blog posts!`);
+    fs.writeFileSync(path.join(__dirname, OUTPUT_FILE), sitemap);
+    console.log(`✅ Sitemap generated: ${OUTPUT_FILE}`);
+    console.log(`📊 Total URLs: ${mainPages.length + blogPosts.length}`);
 }
 
-// Run the generator
 generateSitemap();
