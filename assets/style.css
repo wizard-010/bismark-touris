@@ -525,81 +525,6 @@ footer {
     }
 }
 
-/* Google AdSense Styles */
-.ad-container {
-    margin: 1.5rem 0;
-    text-align: center;
-    overflow: hidden;
-    border-radius: 8px;
-    background-color: #f5f5f5;
-    min-height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.top-ad {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-.bottom-ad {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    clear: both;
-}
-
-.in-content-ad {
-    margin: 2rem 0;
-    padding: 1rem 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 12px;
-}
-
-/* Square Ads Grid */
-.square-ads-grid {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin: 2rem 0;
-}
-
-.square-ads-grid .square-ad {
-    margin: 0;
-    flex: 0 0 auto;
-}
-
-
-
-/* Responsive Ad Containers */
-@media (max-width: 768px) {
-    .ad-container {
-        min-height: 60px;
-        margin: 1rem 0;
-    }
-    
-    .in-content-ad {
-        padding: 0.75rem 0;
-    }
-}
-
-@media (max-width: 576px) {
-    .ad-container {
-        min-height: 50px;
-        margin: 0.75rem 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .square-ads-grid {
-        gap: 1rem;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
 /* Homepage Tour Packages Section */
 .annual-tour-packages {
     margin: 2rem 0;
@@ -1106,10 +1031,9 @@ footer {
     }
 }
 
-/* ========== PRIVACY, ABOUT & BLOG PAGE STYLES ========== */
+/* ========== ABOUT PAGE STYLES ========== */
 
-/* Policy, About, Blog Containers */
-.policy-container, .about-container, .blog-container {
+.about-container {
     background: white;
     padding: 2rem;
     border-radius: 10px;
@@ -1117,7 +1041,7 @@ footer {
     margin-bottom: 2rem;
 }
 
-.policy-container h2, .about-container h2, .blog-container h2 {
+.about-container h2 {
     color: var(--primary-color);
     border-bottom: 2px solid var(--accent-color);
     padding-bottom: 0.5rem;
@@ -1125,32 +1049,52 @@ footer {
     margin-bottom: 1rem;
 }
 
-.policy-container h3, .about-container h3, .blog-container h3 {
+.about-container h3 {
     color: var(--secondary-color);
     margin-top: 1.2rem;
     margin-bottom: 0.8rem;
 }
 
-.policy-container p, .about-container p, .blog-container p {
+.about-container p {
     margin-bottom: 1rem;
     line-height: 1.7;
 }
 
-.policy-container ul, .about-container ul, .blog-container ul {
+.about-container ul {
     margin-left: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.policy-container li, .about-container li, .blog-container li {
+.about-container li {
     margin-bottom: 0.5rem;
 }
 
-.last-updated {
-    font-style: italic;
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member i {
+    font-size: 4rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.team-member h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.team-member p {
     color: #6c757d;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #eee;
+    font-size: 0.85rem;
 }
 
 /* Values Grid */
@@ -1216,40 +1160,23 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Team Section */
-.team-section {
-    margin-top: 2rem;
-    text-align: center;
+/* Read More Button */
+.read-more {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 1.5rem;
-}
-
-.team-member {
-    text-align: center;
-}
-
-.team-member i {
-    font-size: 4rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
-
-.team-member h4 {
+.read-more:hover {
     color: var(--primary-color);
-    margin-bottom: 0.25rem;
+    text-decoration: underline;
 }
 
-.team-member p {
-    color: #6c757d;
-    font-size: 0.85rem;
-}
+/* ========== BLOG PAGE STYLES ========== */
 
-/* Blog Layout */
 .blog-layout {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -1304,18 +1231,6 @@ footer {
 .blog-excerpt {
     margin-bottom: 1rem;
     line-height: 1.7;
-}
-
-.read-more {
-    display: inline-block;
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 0.5rem;
-}
-
-.read-more:hover {
-    text-decoration: underline;
 }
 
 /* Sidebar */
@@ -1428,7 +1343,6 @@ footer {
 
 /* ========== BLOG POST PAGE STYLES ========== */
 
-/* Blog Post Container */
 .blog-post-container {
     background: white;
     padding: 2rem;
@@ -1483,81 +1397,11 @@ footer {
     margin-bottom: 1.2rem;
 }
 
-/* Blog Image */
 .blog-post-content img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     margin: 1.5rem 0;
-}
-
-/* In-line Ad Styles */
-.inline-ad {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    text-align: center;
-    border: 1px solid #dee2e6;
-    transition: all 0.3s ease;
-}
-
-.inline-ad:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.inline-ad .ad-label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.inline-ad ins.adsbygoogle {
-    display: block;
-    margin: 0 auto;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .blog-post-container {
-        padding: 1.5rem;
-    }
-    
-    .blog-post-title {
-        font-size: 1.6rem;
-    }
-    
-    .inline-ad {
-        padding: 1rem;
-        margin: 1.5rem 0;
-    }
-    
-    .ad-container {
-        min-height: 60px;
-        margin: 1rem 0;
-    }
-    
-    .bottom-ad {
-        margin-top: 1.5rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .blog-post-container {
-        padding: 1rem;
-    }
-    
-    .blog-post-title {
-        font-size: 1.4rem;
-    }
-    
-    .ad-container {
-        min-height: 50px;
-        margin: 0.75rem 0;
-    }
 }
 
 /* ========== ABOUT SECTION ========== */
@@ -1642,37 +1486,6 @@ footer {
     color: var(--text-color);
     font-size: 0.9rem;
     line-height: 1.5;
-}
-
-/* ========== READ MORE BUTTON ========== */
-.read-more {
-    display: inline-block;
-    margin-top: 0.75rem;
-    color: var(--accent-color);
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.read-more:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .about-section {
-        padding: 1.5rem;
-    }
-    
-    .why-choose-us {
-        padding: 2rem 1rem;
-    }
-    
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
 }
 
 /* ========== CONTACT PAGE ADDITIONAL STYLES ========== */
@@ -1816,5 +1629,18 @@ footer {
     
     .faq-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .about-section {
+        padding: 1.5rem;
+    }
+    
+    .why-choose-us {
+        padding: 2rem 1rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
