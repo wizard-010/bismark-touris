@@ -162,16 +162,11 @@ document.addEventListener('DOMContentLoaded', function() {
         imagePaths.push(`img/${imageNumber}.jpeg`);
     }
     
-    // ========== GALLERY GRID GENERATION WITH IN-LINE ADS ==========
+    // ========== GALLERY GRID GENERATION ==========
     const galleryGrid = document.getElementById('galleryGrid');
     
     if (galleryGrid) {
         galleryGrid.innerHTML = '';
-        
-        // CONFIGURATION - REPLACE WITH YOUR ACTUAL AD SENSE SLOT IDs
-        const ADSENSE_CLIENT_ID = 'ca-pub-3116480965868234';
-        const INLINE_AD_SLOT_ID = '3333333333';
-        const AD_POSITION_INTERVAL = 4;
         
         function createGalleryItem(path, index) {
             const imageNumber = (index + 1).toString().padStart(4, '0');
@@ -195,42 +190,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return galleryItem;
         }
         
-        function createInlineAd(adIndex) {
-            const adContainer = document.createElement('div');
-            adContainer.className = 'gallery-ad-item';
-            adContainer.setAttribute('data-ad-index', adIndex);
-            
-            adContainer.innerHTML = `
-                <div class="ad-label">Advertisement</div>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="${ADSENSE_CLIENT_ID}"
-                     data-ad-slot="${INLINE_AD_SLOT_ID}"
-                     data-ad-format="rectangle"
-                     data-full-width-responsive="true"></ins>
-                <div class="ad-note">Sponsored Content</div>
-            `;
-            
-            return adContainer;
-        }
-        
         imagePaths.forEach((path, index) => {
             galleryGrid.appendChild(createGalleryItem(path, index));
-            
-            if ((index + 1) % AD_POSITION_INTERVAL === 0 && index + 1 < totalImages) {
-                const adContainer = createInlineAd(Math.floor((index + 1) / AD_POSITION_INTERVAL));
-                galleryGrid.appendChild(adContainer);
-            }
         });
-        
-        setTimeout(() => {
-            if (typeof adsbygoogle !== 'undefined') {
-                const allAdIns = galleryGrid.querySelectorAll('.gallery-ad-item ins.adsbygoogle');
-                allAdIns.forEach(() => {
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                });
-            }
-        }, 100);
     }
     
     // ========== CAROUSEL FUNCTIONALITY (for index.html only) ==========
