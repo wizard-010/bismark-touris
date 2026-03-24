@@ -123,6 +123,57 @@ header {
     backdrop-filter: blur(2px);
 }
 
+
+/* ========== HEADER VISITOR COUNTER STYLES ========== */
+
+/* ========== FLAG COUNTER STYLES ========== */
+
+.header-counter {
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.header-counter a {
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.header-counter a:hover {
+    transform: scale(1.02);
+}
+
+.header-counter img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+}
+
+/* Mobile responsive for flag counter */
+@media (max-width: 768px) {
+    .header-counter {
+        margin-left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+        order: 3;
+    }
+    
+    .header-counter img {
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-counter img {
+        max-width: 160px;
+    }
+}
+
+
+
 /* Navigation Styles */
 .navbar {
     background-color: var(--dark-color);
@@ -1457,6 +1508,5 @@ footer {
         margin: 0.75rem 0;
     }
 }
-
 
 
