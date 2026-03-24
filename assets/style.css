@@ -357,10 +357,9 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem auto;
-    width: 100%;
-    max-width: 1200px;
-    border-radius: 16px;
+    margin: 0 auto;
+    width: fit-content;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -372,10 +371,11 @@ footer {
 }
 
 .poster-image {
-    width: 100%;
+    width: auto;
     height: auto;
     display: block;
     border-radius: 8px;
+    padding: 2rem;
 }
 
 /* Newsflash Section */
