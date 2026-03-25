@@ -352,7 +352,7 @@ footer {
     color: #ff8c42;
 }
 
-/* Poster Styles - FIXED VERSION */
+/* Poster Styles */
 .poster-container {
     display: flex;
     justify-content: center;
@@ -1405,454 +1405,7 @@ footer {
 }
 
 /* ============================================ */
-/* RESPONSIVE BREAKPOINTS (All in one place) */
-/* ============================================ */
-
-/* Large Desktop (1200px and above) */
-@media (min-width: 1200px) {
-    .poster-container {
-        max-width: 1200px;
-    }
-}
-
-/* Desktop (992px to 1199px) */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .header-counter img {
-        max-width: 340px;
-    }
-    
-    .col-lg-3 {
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
-    
-    .carousel-main img {
-        height: 450px;
-    }
-}
-
-/* Tablet and below (max-width: 992px) */
-@media (max-width: 992px) {
-    .carousel-thumbs {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-/* Tablet (768px to 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-    .row {
-        display: flex;
-    }
-    
-    .col-md-4 {
-        flex: 0 0 33.333%;
-        max-width: 33.333%;
-    }
-    
-    .col-md-6 {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-    
-    .contact-container {
-        display: flex;
-        gap: 2rem;
-    }
-}
-
-/* Tablet and Mobile (max-width: 768px) */
-@media (max-width: 768px) {
-    /* Header */
-    .header-container {
-        flex-wrap: wrap;
-        gap: 0.75rem;
-    }
-    
-    .logo-area { order: 1; }
-    .header-text { order: 2; }
-    
-    .header-counter {
-        order: 3;
-        margin-left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 0.5rem;
-    }
-    
-    .header-counter img {
-        max-width: 320px;
-    }
-    
-    .logo, .logo-placeholder {
-        width: 55px;
-        height: 55px;
-    }
-    
-    .logo-placeholder { font-size: 1.4rem; }
-    
-    .header-text h1 { font-size: 1.3rem; }
-    .header-text p {
-        font-size: 0.75rem;
-        padding: 0.15rem 0.5rem;
-    }
-    
-    /* Navigation */
-    .nav-container {
-        padding: 0;
-    }
-    
-    .hamburger-btn {
-        display: block;
-        width: 100%;
-        text-align: right;
-    }
-    
-    .navbar-nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--dark-color);
-    }
-    
-    .navbar-nav.show {
-        display: flex;
-    }
-    
-    .nav-item {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .nav-link {
-        padding: 0.75rem 1rem;
-        border-top: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    /* Carousel */
-    .carousel-main img {
-        height: 350px;
-    }
-    
-    .carousel-thumbs {
-        grid-template-columns: repeat(3, 1fr);
-        max-height: 100px;
-    }
-    
-    .carousel-thumbs img {
-        height: 60px;
-    }
-    
-    .image-counter {
-        font-size: 0.75rem;
-        padding: 4px 10px;
-        bottom: 10px;
-        right: 10px;
-    }
-    
-    .carousel-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 1.2rem;
-    }
-    
-    /* Contact Frame */
-    .contact-frame-links {
-        gap: 1rem;
-    }
-    
-    .contact-frame-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-    
-    .contact-frame-content {
-        padding: 1.2rem 1rem;
-    }
-    
-    /* Blog */
-    .blog-layout {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Footer */
-    footer {
-        padding: 1.5rem 1rem;
-    }
-    
-    .footer-content p {
-        font-size: 0.85rem;
-        margin: 0.4rem 0;
-    }
-    
-    .social-links {
-        margin-top: 0.8rem;
-    }
-    
-    .social-links a {
-        margin: 0 0.4rem;
-        font-size: 0.85rem;
-    }
-    
-    /* Other */
-    .radio-group {
-        gap: 0.75rem;
-    }
-    
-    .faq-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .about-section {
-        padding: 1.5rem;
-    }
-    
-    .why-choose-us {
-        padding: 2rem 1rem;
-    }
-    
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .poster-container {
-        margin: 1.5rem auto;
-        border-radius: 12px;
-    }
-}
-
-/* Mobile Landscape (max-width: 576px) */
-@media (max-width: 576px) {
-    /* Header */
-    .header-counter img {
-        max-width: 300px;
-    }
-    
-    .header-container {
-        gap: 0.6rem;
-    }
-    
-    .logo, .logo-placeholder {
-        width: 45px;
-        height: 45px;
-    }
-    
-    .logo-placeholder { font-size: 1.1rem; }
-    
-    .header-text h1 { font-size: 1.1rem; }
-    .header-text p {
-        font-size: 0.65rem;
-        padding: 0.1rem 0.4rem;
-    }
-    
-    /* Carousel */
-    .carousel-main img {
-        height: 250px;
-    }
-    
-    .carousel-thumbs {
-        grid-template-columns: repeat(2, 1fr);
-        max-height: 90px;
-    }
-    
-    .carousel-thumbs img {
-        height: 55px;
-    }
-    
-    .image-counter {
-        font-size: 0.7rem;
-        padding: 3px 8px;
-    }
-    
-    /* Contact Frame */
-    .contact-frame-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.8rem;
-    }
-    
-    .contact-frame-btn {
-        width: 100%;
-        justify-content: center;
-        padding: 10px 16px;
-    }
-    
-    .contact-frame-header h3 {
-        font-size: 1.1rem;
-    }
-    
-    /* Footer */
-    footer {
-        padding: 1.2rem 0.8rem;
-    }
-    
-    .footer-content p {
-        font-size: 0.75rem;
-        margin: 0.35rem 0;
-    }
-    
-    .social-links {
-        margin-top: 0.7rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-    
-    .social-links a {
-        margin: 0;
-        padding: 0.3rem 0.8rem;
-        background-color: rgba(255,255,255,0.1);
-        border-radius: 20px;
-        font-size: 0.8rem;
-    }
-    
-    .social-links a:hover {
-        background-color: rgba(255,255,255,0.2);
-    }
-    
-    /* Other */
-    .poster-container {
-        margin: 1rem auto;
-        border-radius: 8px;
-    }
-}
-
-/* Extra Small Devices (max-width: 375px) */
-@media (max-width: 375px) {
-    .poster-container {
-        border-radius: 4px;
-    }
-    
-    .poster-image {
-        border-radius: 4px;
-    }
-}
-
-
-/* Featured Post Styles */
-.featured-post {
-    margin-bottom: 2rem;
-}
-
-.featured-card {
-    background: linear-gradient(135deg, #fff9f0 0%, #fff5e6 100%);
-    border-left: 5px solid var(--accent-color);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    position: relative;
-    transition: transform 0.3s ease;
-}
-
-.featured-card:hover {
-    transform: translateY(-3px);
-}
-
-.featured-badge {
-    display: inline-block;
-    background: var(--accent-color);
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    margin-bottom: 1rem;
-    letter-spacing: 0.5px;
-}
-
-.featured-card h2 {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 0.75rem;
-}
-
-.featured-card p {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
-    color: var(--text-color);
-}
-
-.featured-card .read-more {
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-/* Blog List Styles */
-.blog-list {
-    margin-top: 1rem;
-}
-
-.blog-post {
-    border-bottom: 1px solid #e9ecef;
-    padding: 1.8rem 0;
-}
-
-.blog-post:first-child {
-    padding-top: 0;
-}
-
-.blog-post:last-child {
-    border-bottom: none;
-}
-
-.blog-post h2 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-}
-
-.blog-post h2 a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.blog-post h2 a:hover {
-    color: var(--accent-color);
-}
-
-.blog-meta {
-    color: #6c757d;
-    font-size: 0.85rem;
-    margin-bottom: 0.75rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.blog-meta i {
-    margin-right: 0.3rem;
-}
-
-.blog-excerpt {
-    color: var(--text-color);
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .featured-card {
-        padding: 1.5rem;
-    }
-    
-    .featured-card h2 {
-        font-size: 1.4rem;
-    }
-    
-    .featured-card p {
-        font-size: 0.95rem;
-    }
-    
-    .blog-post h2 {
-        font-size: 1.2rem;
-    }
-}
-
-/* ============================================ */
-/* VOLCANO TOURS PAGE STYLES */
+/* SERVICE PAGES STYLES (Volcano, WWII, Cultural, Custom Tours) */
 /* ============================================ */
 
 /* Tour Highlight Box */
@@ -2090,8 +1643,382 @@ footer {
     font-weight: bold;
 }
 
-/* Responsive Adjustments for Volcano Page */
+/* Service Hero Section */
+.service-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.service-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--yellow-color);
+}
+
+.service-hero p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Service Card on Products Page */
+.service-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.service-features li {
+    padding: 0.3rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.service-features li i {
+    color: var(--accent-color);
+    width: 20px;
+}
+
+.btn-service {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-service:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Contact CTA Section */
+.contact-cta {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.contact-cta h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-cta .btn-service {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: var(--accent-color);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+}
+
+/* Featured Post Styles */
+.featured-post {
+    margin-bottom: 2rem;
+}
+
+.featured-card {
+    background: linear-gradient(135deg, #fff9f0 0%, #fff5e6 100%);
+    border-left: 5px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-3px);
+}
+
+.featured-badge {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.featured-card h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.featured-card p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    color: var(--text-color);
+}
+
+.featured-card .read-more {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Blog List Styles */
+.blog-list {
+    margin-top: 1rem;
+}
+
+/* ============================================ */
+/* RESPONSIVE BREAKPOINTS */
+/* ============================================ */
+
+/* Large Desktop (1200px and above) */
+@media (min-width: 1200px) {
+    .poster-container {
+        max-width: 1200px;
+    }
+}
+
+/* Desktop (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .header-counter img {
+        max-width: 340px;
+    }
+    
+    .col-lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    
+    .carousel-main img {
+        height: 450px;
+    }
+}
+
+/* Tablet and below (max-width: 992px) */
+@media (max-width: 992px) {
+    .carousel-thumbs {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Tablet (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .row {
+        display: flex;
+    }
+    
+    .col-md-4 {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+    
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    .contact-container {
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+/* Tablet and Mobile (max-width: 768px) */
 @media (max-width: 768px) {
+    /* Header */
+    .header-container {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+    
+    .logo-area { order: 1; }
+    .header-text { order: 2; }
+    
+    .header-counter {
+        order: 3;
+        margin-left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+    
+    .header-counter img {
+        max-width: 320px;
+    }
+    
+    .logo, .logo-placeholder {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .logo-placeholder { font-size: 1.4rem; }
+    
+    .header-text h1 { font-size: 1.3rem; }
+    .header-text p {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.5rem;
+    }
+    
+    /* Navigation */
+    .nav-container {
+        padding: 0;
+    }
+    
+    .hamburger-btn {
+        display: block;
+        width: 100%;
+        text-align: right;
+    }
+    
+    .navbar-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--dark-color);
+    }
+    
+    .navbar-nav.show {
+        display: flex;
+    }
+    
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-link {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Carousel */
+    .carousel-main img {
+        height: 350px;
+    }
+    
+    .carousel-thumbs {
+        grid-template-columns: repeat(3, 1fr);
+        max-height: 100px;
+    }
+    
+    .carousel-thumbs img {
+        height: 60px;
+    }
+    
+    .image-counter {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+    
+    /* Contact Frame */
+    .contact-frame-links {
+        gap: 1rem;
+    }
+    
+    .contact-frame-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .contact-frame-content {
+        padding: 1.2rem 1rem;
+    }
+    
+    /* Blog */
+    .blog-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 1.5rem 1rem;
+    }
+    
+    .footer-content p {
+        font-size: 0.85rem;
+        margin: 0.4rem 0;
+    }
+    
+    .social-links {
+        margin-top: 0.8rem;
+    }
+    
+    .social-links a {
+        margin: 0 0.4rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Other */
+    .radio-group {
+        gap: 0.75rem;
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-section {
+        padding: 1.5rem;
+    }
+    
+    .why-choose-us {
+        padding: 2rem 1rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .poster-container {
+        margin: 1.5rem auto;
+        border-radius: 12px;
+    }
+    
+    /* Service Pages Responsive */
     .itinerary-item {
         flex-direction: column;
         gap: 0.25rem;
@@ -2112,9 +2039,125 @@ footer {
     .featured-card h2 {
         font-size: 1.4rem;
     }
+    
+    .featured-card {
+        padding: 1.5rem;
+    }
+    
+    .featured-card p {
+        font-size: 0.95rem;
+    }
+    
+    .blog-post h2 {
+        font-size: 1.2rem;
+    }
+    
+    .service-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .service-hero {
+        padding: 2rem;
+    }
 }
 
+/* Mobile Landscape (max-width: 576px) */
 @media (max-width: 576px) {
+    /* Header */
+    .header-counter img {
+        max-width: 300px;
+    }
+    
+    .header-container {
+        gap: 0.6rem;
+    }
+    
+    .logo, .logo-placeholder {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .logo-placeholder { font-size: 1.1rem; }
+    
+    .header-text h1 { font-size: 1.1rem; }
+    .header-text p {
+        font-size: 0.65rem;
+        padding: 0.1rem 0.4rem;
+    }
+    
+    /* Carousel */
+    .carousel-main img {
+        height: 250px;
+    }
+    
+    .carousel-thumbs {
+        grid-template-columns: repeat(2, 1fr);
+        max-height: 90px;
+    }
+    
+    .carousel-thumbs img {
+        height: 55px;
+    }
+    
+    .image-counter {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+    
+    /* Contact Frame */
+    .contact-frame-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    
+    .contact-frame-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 16px;
+    }
+    
+    .contact-frame-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 1.2rem 0.8rem;
+    }
+    
+    .footer-content p {
+        font-size: 0.75rem;
+        margin: 0.35rem 0;
+    }
+    
+    .social-links {
+        margin-top: 0.7rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .social-links a {
+        margin: 0;
+        padding: 0.3rem 0.8rem;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 20px;
+        font-size: 0.8rem;
+    }
+    
+    .social-links a:hover {
+        background-color: rgba(255,255,255,0.2);
+    }
+    
+    /* Other */
+    .poster-container {
+        margin: 1rem auto;
+        border-radius: 8px;
+    }
+    
+    /* Service Pages Responsive */
     .tour-card .card-title {
         font-size: 1.1rem;
     }
@@ -2125,5 +2168,16 @@ footer {
     
     .essential-info {
         padding: 1rem;
+    }
+}
+
+/* Extra Small Devices (max-width: 375px) */
+@media (max-width: 375px) {
+    .poster-container {
+        border-radius: 4px;
+    }
+    
+    .poster-image {
+        border-radius: 4px;
     }
 }
