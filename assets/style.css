@@ -1850,3 +1850,280 @@ footer {
         font-size: 1.2rem;
     }
 }
+
+/* ============================================ */
+/* VOLCANO TOURS PAGE STYLES */
+/* ============================================ */
+
+/* Tour Highlight Box */
+.tour-highlight {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-left: 5px solid var(--accent-color);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+}
+
+/* Price Box */
+.price-box {
+    background: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.price-box h3 {
+    color: var(--yellow-color);
+    margin-bottom: 0.5rem;
+}
+
+.price-box .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+/* Itinerary Items */
+.itinerary-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.itinerary-time {
+    min-width: 80px;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* FAQ Items */
+.faq-item {
+    margin-bottom: 1.5rem;
+}
+
+.faq-question {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Safety Badge */
+.safety-badge {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+/* Feature Icon for Service Cards */
+.feature-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+/* Tour Card Grid */
+.tour-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Info Grid for Features */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card i {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.info-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.info-card p {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent-color);
+}
+
+.breadcrumb .current {
+    color: var(--accent-color);
+}
+
+/* Tour Card Styles */
+.tour-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tour-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.tour-card .card-body {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.tour-card .card-title {
+    font-size: 1.3rem;
+    margin: 0.5rem 0 0.75rem;
+}
+
+.tour-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 1rem 0 0.25rem;
+}
+
+.tour-price-note {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.tour-features {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.tour-features li {
+    padding: 0.3rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tour-features li i {
+    color: var(--accent-color);
+    width: 20px;
+}
+
+/* Essential Info Section */
+.essential-info {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.essential-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.essential-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.essential-info li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.essential-info li:before {
+    content: "✓";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Responsive Adjustments for Volcano Page */
+@media (max-width: 768px) {
+    .itinerary-item {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .itinerary-time {
+        min-width: auto;
+    }
+    
+    .tour-highlight {
+        padding: 1rem;
+    }
+    
+    .price-box .price {
+        font-size: 1.8rem;
+    }
+    
+    .featured-card h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .tour-card .card-title {
+        font-size: 1.1rem;
+    }
+    
+    .tour-price {
+        font-size: 1.2rem;
+    }
+    
+    .essential-info {
+        padding: 1rem;
+    }
+}
