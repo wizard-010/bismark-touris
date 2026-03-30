@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Main Pages -->
     <url>
         <loc>https://wizard-010.github.io/bismark-touris/</loc>
         <lastmod>2026-03-30</lastmod>
@@ -54,6 +55,8 @@
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
+    
+    <!-- Service Pages -->
     <url>
         <loc>https://wizard-010.github.io/bismark-touris/volcano-tours.html</loc>
         <lastmod>2026-03-30</lastmod>
@@ -78,6 +81,8 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    
+    <!-- Blog Posts -->
     <url>
         <loc>https://wizard-010.github.io/bismark-touris/blog-posts/tufi-fjords-hammerhead-sharks-moray-eels.html</loc>
         <lastmod>2026-04-01</lastmod>
