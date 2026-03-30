@@ -3,33 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the beauty of East New Britain through our photo gallery. Volcanoes, WWII sites, beaches, and cultural experiences captured by Bismark Touris in Papua New Guinea.">
-    <meta name="keywords" content="Papua New Guinea gallery, Rabaul photos, Tavurvur volcano images, Kokopo beach pictures, WWII tunnels photos, PNG travel photos">
-    <meta name="author" content="Emmanuel Marosi, eymarosi@gmail.com">
-    <meta property="og:title" content="Photo Gallery | Bismark Touris">
-    <meta property="og:description" content="View stunning images of East New Britain's volcanoes, WWII historical sites, pristine beaches, and cultural moments from our tours.">
-    <meta property="og:image" content="img/logo.jpeg">
+    
+    <!-- CANONICAL TAG: Resolves duplicate content without user-selected canonical -->
+    <link rel="canonical" href="https://wizard-010.github.io/bismark-touris/gallery.html">
+    
+    <!-- HIGH-VALUE SEO META TAGS - Premium visual keywords -->
+    <meta name="description" content="Explore the stunning beauty of East New Britain through our premium photo gallery. Stunning images of Mt Tavurvur volcano eruptions, WWII historical sites, pristine Kokopo beaches, and authentic Tolai cultural moments captured by Bismark Touris, the #1 travel agency in Papua New Guinea.">
+    <meta name="keywords" content="Papua New Guinea photo gallery, Mt Tavurvur volcano images, Rabaul caldera photos, Kokopo beach pictures, WWII tunnels Rabaul images, Bitapaka War Cemetery photos, Tolai culture photos, PNG travel photography, luxury PNG tours gallery, volcano eruption photos PNG, East New Britain scenic photos">
+    <meta name="author" content="Bismark Touris">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    
+    <!-- OPEN GRAPH TAGS -->
+    <meta property="og:title" content="Photo Gallery | Premium PNG Travel Images - Mt Tavurvur, WWII Sites & Cultural Moments | Bismark Touris">
+    <meta property="og:description" content="View stunning images of East New Britain's volcanic landscapes, WWII historical sites, pristine beaches, and authentic cultural moments from Papua New Guinea's #1 premium tour operator.">
+    <meta property="og:image" content="https://wizard-010.github.io/bismark-touris/img/gallery-og-image.jpg">
     <meta property="og:url" content="https://wizard-010.github.io/bismark-touris/gallery.html">
     <meta property="og:type" content="website">
-
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Bismark Touris - #1 Premium Travel Agency Papua New Guinea">
+    
+    <!-- TWITTER CARDS -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Photo Gallery | Premium PNG Travel Images | Bismark Touris">
+    <meta name="twitter:description" content="Stunning volcano photos, WWII history images, and cultural moments from East New Britain.">
+    <meta name="twitter:image" content="https://wizard-010.github.io/bismark-touris/img/gallery-og-image.jpg">
+    
+    <!-- GEO META TAGS -->
+    <meta name="geo.region" content="PG-ENB">
+    <meta name="geo.placename" content="Kokopo">
+    
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 
-    <title>Photo Gallery | Bismark Touris - Papua New Guinea Travel Photos</title>
+    <title>Photo Gallery | Premium PNG Travel Images - Mt Tavurvur Volcano, WWII Sites & Cultural Moments | Bismark Touris</title>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo-area">
                 <a href="index.html">
-                    <img src="img/logo.jpeg" alt="Bismark Touris Logo" class="logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%23ff6b35\'/%3E%3Ctext x=\'50\' y=\'67\' text-anchor=\'middle\' fill=\'white\' font-size=\'40\' font-weight=\'bold\'%3EBT%3C/text%3E%3C/svg%3E'">
+                    <img src="img/logo.jpeg" alt="Bismark Touris - #1 Premium Travel Agency Papua New Guinea" class="logo">
                 </a>
             </div>
             <div class="header-text">
-                <a href="index.html"><h1>Bismark Touris</h1></a>
-                <p>Your Trusted Partner in Tourism Since 2024</p>
+                <a href="index.html"><h1>Bismark Touris — #1 Premium Travel Agency Papua New Guinea</h1></a>
+                <p>Luxury Volcano Tours • Cultural Expeditions • Custom Adventures Since 2024</p>
             </div>
             <div class="header-counter" id="visitorCountHeader"></div>
         </div>
@@ -46,14 +66,16 @@
                 <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
                 <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="contacts.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="contacts.html" class="nav-link">Contact Us</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <h1>Our Photo Gallery</h1>
-        <p>Discover the beauty of East New Britain through our lens. From volcanic landscapes to cultural moments, these images capture the essence of our tours. Click on any image to view full size.</p>
+        <div class="gallery-header">
+            <h1>Premium Photo Gallery: Discover the Beauty of Papua New Guinea</h1>
+            <p>Discover the breathtaking beauty of East New Britain through our lens. From the dramatic eruptions of Mt Tavurvur volcano to the serene beaches of Kokopo, from solemn WWII historical sites to vibrant Tolai cultural moments, these images capture the essence of our premium tours. Click on any image to view full size and experience the magic of Papua New Guinea with the #1 tour operator in the region.</p>
+        </div>
 
         <!-- Gallery Grid - Images will be loaded dynamically by JavaScript -->
         <div class="gallery-grid" id="galleryGrid">
@@ -61,24 +83,52 @@
         </div>
 
         <!-- Gallery Information Section -->
-        <div class="gallery-info" style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 15px;">
-            <h2><i class="fas fa-camera"></i> About Our Photos</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <h3><i class="fas fa-mountain"></i> Volcanoes</h3>
-                    <p>Experience the raw power of Mt. Tavurvur and the stunning landscapes of the Rabaul caldera.</p>
+        <div class="gallery-info">
+            <h2><i class="fas fa-camera"></i> Experience These Moments in Person</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-mountain"></i>
+                    <h3>Volcano Tours</h3>
+                    <p>Experience the raw power of Mt Tavurvur and the stunning landscapes of the Rabaul caldera. Our premium volcano tours take you to the rim of an active volcano with expert volcanologist guides.</p>
                 </div>
-                <div class="col-md-4">
-                    <h3><i class="fas fa-landmark"></i> WWII History</h3>
-                    <p>Explore the historic Japanese tunnels, Bitapaka War Cemetery, and relics from the Pacific War.</p>
+                <div class="info-card">
+                    <i class="fas fa-landmark"></i>
+                    <h3>WWII History Tours</h3>
+                    <p>Explore the historic Japanese tunnel systems, Bitapaka War Cemetery, and relics from the Pacific War. Our expert historian guides bring the stories of WWII to life.</p>
                 </div>
-                <div class="col-md-4">
-                    <h3><i class="fas fa-umbrella-beach"></i> Culture & Community</h3>
-                    <p>See the warmth of our local communities, school visits, and traditional Tolai culture.</p>
+                <div class="info-card">
+                    <i class="fas fa-umbrella-beach"></i>
+                    <h3>Culture & Community</h3>
+                    <p>See the warmth of our local communities, school visits, and traditional Tolai culture. Experience authentic village life and participate in traditional ceremonies.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-water"></i>
+                    <h3>Pristine Beaches</h3>
+                    <p>Relax on Kokopo's stunning white-sand beaches, swim in crystal-clear waters, and enjoy world-class snorkeling. Our premium beach experiences offer luxury and tranquility.</p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 1.5rem;">
-                <a href="contacts.html" class="btn">Book a Tour to See These Places →</a>
+            <div class="gallery-cta">
+                <a href="contacts.html" class="cta-button"><i class="fas fa-calendar-alt"></i> Book a Premium Tour to See These Places →</a>
+            </div>
+        </div>
+        
+        <!-- Gallery Stats -->
+        <div class="gallery-stats">
+            <div class="stat-item">
+                <h3>46+</h3>
+                <p>Stunning Images</p>
+            </div>
+            <div class="stat-item">
+                <h3>10+</h3>
+                <p>Destinations</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Happy Travelers</p>
+            </div>
+            <div class="stat-item">
+                <h3>Since 2024</h3>
+                <p>Capturing PNG Beauty</p>
             </div>
         </div>
     </main>
@@ -89,19 +139,19 @@
                 <a href="about.html">About Us</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
-                <a href="blog.html">Our Blog</a>
+                <a href="blog.html">Travel Blog</a>
                 <a href="sitemap.xml">Sitemap</a>
             </div>
 
             <div class="contact-frame">
                 <div class="contact-frame-header">
-                    <h3><i class="fas fa-phone-alt"></i> We are reachable via:</h3>
+                    <h3><i class="fas fa-phone-alt"></i> Book Your Premium PNG Adventure</h3>
                 </div>
                 <div class="contact-frame-content">
                     <div class="contact-frame-links">
-                        <a href="https://www.facebook.com/profile.php?id=100093034895584" class="contact-frame-btn"><i class="fab fa-facebook-f"></i> Facebook</a>
-                        <a href="https://wa.me/67576769513" class="contact-frame-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                        <a href="tel:+67576769513" class="contact-frame-btn phone"><i class="fas fa-phone-alt"></i> Phone</a>
+                        <a href="https://www.facebook.com/profile.php?id=100093034895584" class="contact-frame-btn" rel="noopener noreferrer" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+                        <a href="https://wa.me/67576769513" class="contact-frame-btn whatsapp" rel="noopener noreferrer" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="tel:+67576769513" class="contact-frame-btn phone"><i class="fas fa-phone-alt"></i> Call Us</a>
                         <a href="mailto:info@bismarktouris.com" class="contact-frame-btn email"><i class="fas fa-envelope"></i> Email</a>
                     </div>
                     <div class="contact-frame-info">
@@ -114,10 +164,28 @@
                 </div>
             </div>
 
-            <p>&copy; 2026 Bismark Touris. All rights reserved.</p>
+            <p>&copy; 2026 Bismark Touris — Papua New Guinea's #1 Premium Tour Operator. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="assets/main.js"></script>
+    
+    <!-- Structured Data for Gallery -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ImageGallery",
+        "name": "Bismark Touris Premium PNG Travel Gallery",
+        "description": "Stunning images of Mt Tavurvur volcano, WWII historical sites, Kokopo beaches, and Tolai cultural moments in East New Britain, Papua New Guinea.",
+        "url": "https://wizard-010.github.io/bismark-touris/gallery.html",
+        "provider": {
+            "@type": "TravelAgency",
+            "name": "Bismark Touris",
+            "url": "https://wizard-010.github.io/bismark-touris/",
+            "telephone": "+67576769513"
+        },
+        "keywords": "volcano photos PNG, Mt Tavurvur images, WWII tunnels Rabaul, Kokopo beach pictures, Tolai culture photos"
+    }
+    </script>
 </body>
 </html>
