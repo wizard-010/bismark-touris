@@ -4,54 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- CANONICAL TAG: Resolves duplicate content without user-selected canonical -->
+    <!-- CANONICAL TAG ADDED -->
     <link rel="canonical" href="https://wizard-010.github.io/bismark-touris/blog.html">
     
-    <!-- HIGH-VALUE SEO META TAGS - Premium travel keywords with high CPC -->
-    <title>Papua New Guinea Travel Blog | Volcano Tours, Goroka Show 2026, Kokoda Trail & Cultural Festivals | Bismark Touris</title>
-    <meta name="description" content="Expert Papua New Guinea travel blog featuring premium volcano tours to Mt Tavurvur, Goroka Show 2026 tribal festival guide, Kokoda Trail trekking costs, Bird of Paradise watching, and exclusive cultural experiences. Your ultimate PNG travel resource from the #1 tour operator in East New Britain.">
-    <meta name="keywords" content="Papua New Guinea travel blog, luxury PNG travel, volcano tours Rabaul, Mt Tavurvur guided hike, Goroka Show 2026 dates, Kokoda Trail trekking cost, Bird of Paradise watching tours, Baining fire dance, Tufi diving liveaboards, WWII history tours PNG, premium tour operator East New Britain, adventure travel packages PNG, cultural festivals Papua New Guinea, best travel blog PNG">
+    <!-- Primary SEO Meta Tags - Optimized -->
+    <title>Papua New Guinea Travel Blog | Goroka Show 2026, Volcano Tours, Kokoda Trail & Cultural Festivals | Bismark Touris</title>
+    <meta name="description" content="Expert travel guides, cultural insights, and adventure stories from Papua New Guinea. Discover the Goroka Show, Kokoda Trail, Tufi homestays, Bird of Paradise watching, volcano tours to Mt Tavurvur, and more. Your ultimate PNG travel resource from the #1 tour operator in East New Britain.">
+    <meta name="keywords" content="Papua New Guinea travel blog, PNG travel guide, Goroka Show 2026, Kokoda Trail trekking, Tufi homestays, Bird of Paradise watching, Rabaul volcano tours, Mt Tavurvur hike, PNG diving liveaboards, Baining fire dance, Papua New Guinea culture, travel tips PNG, East New Britain tourism, luxury volcano tours PNG, WWII history tours Rabaul">
     <meta name="author" content="Bismark Touris">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="robots" content="index, follow">
     <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
     
-    <!-- OPEN GRAPH / FACEBOOK -->
+    <!-- Open Graph / Facebook Meta Tags - Optimized -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wizard-010.github.io/bismark-touris/blog.html">
-    <meta property="og:title" content="Papua New Guinea Travel Blog | Volcano Tours & Cultural Festival Guides | Bismark Touris">
-    <meta property="og:description" content="Expert travel guides for Goroka Show 2026, Mt Tavurvur volcano tours, Kokoda Trail trekking, and Bird of Paradise watching. Premium PNG travel experiences with the #1 tour operator in East New Britain.">
-    <meta property="og:image" content="https://wizard-010.github.io/bismark-touris/img/blog-og-image.jpg">
+    <meta property="og:title" content="Papua New Guinea Travel Blog | Goroka Show 2026, Volcano Tours & Cultural Festivals | Bismark Touris">
+    <meta property="og:description" content="Expert travel guides, cultural insights, and adventure stories from Papua New Guinea's most spectacular destinations. Premium volcano tours, Goroka Show guides, and cultural experiences.">
+    <meta property="og:image" content="https://wizard-010.github.io/bismark-touris/img/og-blog.jpg">
     <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="Bismark Touris - Premium Travel Agency Papua New Guinea">
+    <meta property="og:site_name" content="Bismark Touris">
     
-    <!-- TWITTER CARDS -->
+    <!-- Twitter Meta Tags - Optimized -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Papua New Guinea Travel Blog | Volcano Tours & Cultural Experiences">
-    <meta name="twitter:description" content="Expert guides for Goroka Show 2026, volcano tours, and cultural expeditions. Your ultimate PNG travel resource.">
-    <meta name="twitter:image" content="https://wizard-010.github.io/bismark-touris/img/blog-og-image.jpg">
+    <meta name="twitter:title" content="Papua New Guinea Travel Blog | Goroka Show 2026, Volcano Tours & Cultural Festivals">
+    <meta name="twitter:description" content="Expert travel guides, cultural insights, and adventure stories from Papua New Guinea.">
+    <meta name="twitter:image" content="https://wizard-010.github.io/bismark-touris/img/og-blog.jpg">
     
-    <!-- ADDITIONAL SEO META -->
-    <meta name="geo.region" content="PG-ENB">
-    <meta name="geo.placename" content="Kokopo">
-    <meta name="geo.position" content="-4.3433;152.2688">
-    <meta name="ICBM" content="-4.3433, 152.2688">
-    
-    <!-- Fonts & Styles -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
+    
+    <style>
+        /* Additional styles for pagination */
+        .blog-posts-container {
+            min-height: 500px;
+        }
+        
+        .page-info {
+            text-align: center;
+            margin: 1rem 0;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        .loading-spinner {
+            text-align: center;
+            padding: 2rem;
+            display: none;
+        }
+        
+        .loading-spinner i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Featured post stays visible */
+        .featured-post {
+            margin-bottom: 2rem;
+        }
+        
+        /* Blog list items */
+        .blog-post {
+            border-bottom: 1px solid #e9ecef;
+            padding: 1.5rem 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .blog-post:first-child {
+            padding-top: 0;
+        }
+        
+        .blog-post:last-child {
+            border-bottom: none;
+        }
+        
+        /* Pagination controls */
+        .pagination-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .pagination-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            background: #e9ecef;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+        }
+        
+        .pagination-btn:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .pagination-btn.active {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .pagination-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .pagination-btn.disabled:hover {
+            background: #e9ecef;
+            color: var(--text-color);
+        }
+        
+        .page-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            height: 36px;
+            padding: 0 0.5rem;
+            background: #e9ecef;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .page-number:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .page-number.active {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .pagination-ellipsis {
+            padding: 0 0.5rem;
+            color: var(--text-color);
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo-area">
                 <a href="index.html">
-                    <img src="img/logo.jpeg" alt="Bismark Touris - Premium Travel Agency Papua New Guinea | Volcano Tours & Cultural Expeditions" class="logo" width="100" height="100">
+                    <img src="img/logo.jpeg" alt="Bismark Touris Logo - Papua New Guinea Travel Experts" class="logo" width="100" height="100" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%23ff6b35\'/%3E%3Ctext x=\'50\' y=\'67\' text-anchor=\'middle\' fill=\'white\' font-size=\'40\' font-weight=\'bold\'%3EBT%3C/text%3E%3C/svg%3E'">
                 </a>
             </div>
             <div class="header-text">
-                <a href="index.html"><h1>Bismark Touris — #1 Premium Travel Agency Papua New Guinea</h1></a>
-                <p>Luxury Volcano Tours • Cultural Expeditions • Goroka Show 2026 • Kokoda Trail Treks</p>
+                <a href="index.html"><h1>Bismark Touris</h1></a>
+                <p>Your Trusted Partner in Tourism Since 2024</p>
             </div>
             <div class="header-counter" id="visitorCountHeader"></div>
         </div>
@@ -74,35 +196,39 @@
     </nav>
 
     <main>
-        <!-- BLOG HEADER -->
+        <!-- Blog Header -->
         <div class="blog-header">
-            <h1>Papua New Guinea Travel Blog: Volcano Tours, Cultural Festivals & Adventure Guides</h1>
-            <p class="blog-subtitle">Expert travel guides, cultural insights, and adventure stories from Papua New Guinea's most spectacular destinations. Discover premium volcano tours to Mt Tavurvur, complete guides to Goroka Show 2026, Kokoda Trail trekking costs, Bird of Paradise watching locations, and exclusive cultural experiences with the #1 tour operator in East New Britain Province.</p>
+            <h1>Papua New Guinea Travel Blog</h1>
+            <p class="blog-subtitle">Expert travel guides, cultural insights, and adventure stories from Papua New Guinea's most spectacular destinations. Join us as we explore ancient traditions, challenging treks, and unforgettable experiences.</p>
         </div>
 
         <div class="blog-layout">
             <div class="blog-main">
                 
-                <!-- FEATURED POST SECTION -->
+                <!-- FEATURED POST SECTION - Always visible -->
                 <div class="featured-post">
                     <div class="featured-card">
-                        <div class="featured-badge">FEATURED: GOROKA SHOW 2026</div>
+                        <div class="featured-badge">FEATURED</div>
                         <h2><a href="blog-posts/goroka-show-2026-dates.html">Goroka Show 2026: September 11–13 — Complete Guide to PNG's Most Spectacular Tribal Gathering</a></h2>
                         <div class="blog-meta">
                             <span><i class="far fa-calendar-alt"></i> March 24, 2026</span>
                             <span><i class="far fa-clock"></i> 10 min read</span>
                             <span><i class="fas fa-tag"></i> Cultural Festival</span>
-                            <span><i class="fas fa-star"></i> Premium Guide</span>
                         </div>
-                        <p>Papua New Guinea's most spectacular tribal gathering returns September 11–13, 2026! Over 100 tribes gather in the Eastern Highlands for three days of traditional sing-sings, elaborate body paint, and ancient ceremonies. Complete guide with dates, travel tips, accommodation advice, and how to book premium viewing packages for the ultimate cultural experience.</p>
-                        <a href="blog-posts/goroka-show-2026-dates.html" class="read-more">Read the Complete Premium Guide →</a>
+                        <p>Papua New Guinea's most spectacular tribal gathering returns September 11–13, 2026! Over 100 tribes gather in the Eastern Highlands for three days of traditional sing-sings, elaborate body paint, and ancient ceremonies. Complete guide with dates, travel tips, and accommodation advice.</p>
+                        <a href="blog-posts/goroka-show-2026-dates.html" class="read-more">Read the Complete Guide →</a>
                     </div>
                 </div>
 
-                <!-- Page Info -->
+                <!-- Page Info Display -->
                 <div class="page-info" id="pageInfo"></div>
                 
-                <!-- Blog Posts Container -->
+                <!-- Loading Spinner -->
+                <div class="loading-spinner" id="loadingSpinner">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                
+                <!-- Blog Posts Container - Dynamically populated -->
                 <div id="blogPostsContainer" class="blog-posts-container"></div>
                 
                 <!-- Pagination Controls -->
@@ -110,58 +236,58 @@
                 
             </div>
 
-            <!-- SIDEBAR -->
+            <!-- Sidebar -->
             <aside class="blog-sidebar">
                 <div class="sidebar search-box">
-                    <h3><i class="fas fa-search"></i> Search PNG Travel Guides</h3>
+                    <h3><i class="fas fa-search"></i> Search</h3>
                     <form action="#" method="get" role="search" id="searchForm">
-                        <input type="text" name="s" placeholder="Search volcano tours, Goroka Show, Kokoda Trail..." aria-label="Search blog posts" id="searchInput">
+                        <input type="text" name="s" placeholder="Search blog posts..." aria-label="Search blog posts" id="searchInput">
                     </form>
                 </div>
 
                 <div class="sidebar categories">
-                    <h3><i class="fas fa-tags"></i> Travel Categories</h3>
+                    <h3><i class="fas fa-tags"></i> Categories</h3>
                     <ul class="categories-list">
-                        <li><a href="#" data-category="Cultural Festival">Cultural Festivals & Sing-sings</a> <span id="cat-cultural">(0)</span></li>
-                        <li><a href="#" data-category="Trekking">Trekking & Kokoda Trail</a> <span id="cat-trekking">(0)</span></li>
-                        <li><a href="#" data-category="Diving">Diving & Snorkeling PNG</a> <span id="cat-diving">(0)</span></li>
-                        <li><a href="#" data-category="Wildlife">Bird of Paradise Watching</a> <span id="cat-wildlife">(0)</span></li>
-                        <li><a href="#" data-category="History">WWII History Tours</a> <span id="cat-history">(0)</span></li>
-                        <li><a href="#" data-category="Cultural Experiences">Cultural Village Experiences</a> <span id="cat-cultural-exp">(0)</span></li>
-                        <li><a href="#" data-category="Volcano">Volcano Tours & Mt Tavurvur</a> <span id="cat-volcano">(0)</span></li>
-                        <li><a href="#" data-category="Travel Tips">Travel Tips & PNG Guides</a> <span id="cat-travel">(0)</span></li>
+                        <li><a href="#" data-category="Cultural Festival">Cultural Festivals</a> <span id="cat-cultural">(0)</span></li>
+                        <li><a href="#" data-category="Trekking">Trekking & Hiking</a> <span id="cat-trekking">(0)</span></li>
+                        <li><a href="#" data-category="Diving">Diving & Snorkeling</a> <span id="cat-diving">(0)</span></li>
+                        <li><a href="#" data-category="Wildlife">Bird Watching</a> <span id="cat-wildlife">(0)</span></li>
+                        <li><a href="#" data-category="History">WWII History</a> <span id="cat-history">(0)</span></li>
+                        <li><a href="#" data-category="Cultural Experiences">Local Experiences</a> <span id="cat-cultural-exp">(0)</span></li>
+                        <li><a href="#" data-category="Volcano">Volcanoes</a> <span id="cat-volcano">(0)</span></li>
+                        <li><a href="#" data-category="Travel Tips">Travel Tips</a> <span id="cat-travel">(0)</span></li>
                     </ul>
                 </div>
 
                 <div class="sidebar popular-posts">
-                    <h3><i class="fas fa-fire"></i> Most Popular Guides</h3>
+                    <h3><i class="fas fa-fire"></i> Popular Posts</h3>
                     <ul id="popularPostsList">
-                        <li><a href="blog-posts/goroka-show-2026.html">Goroka Show 2026: Complete Festival Guide</a></li>
-                        <li><a href="blog-posts/mt-tavurvur-volcano-tour.html">Mt Tavurvur Volcano Tour: Complete Guide</a></li>
-                        <li><a href="blog-posts/kokoda-trail-cost.html">Kokoda Trail Cost 2026: Budget & Premium</a></li>
-                        <li><a href="blog-posts/bird-of-paradise.html">Bird of Paradise Watching: Top Locations</a></li>
-                        <li><a href="blog-posts/baining-fire-dance.html">Baining Fire Dance: Sacred Ceremony Guide</a></li>
+                        <li><a href="blog-posts/goroka-show-2026.html">Goroka Show 2026: Complete Guide</a></li>
+                        <li><a href="blog-posts/kokoda-trail-cost.html">Kokoda Trail Cost 2026</a></li>
+                        <li><a href="blog-posts/bird-of-paradise.html">Bird of Paradise Watching Guide</a></li>
+                        <li><a href="blog-posts/rabaul-volcanic-eruption-1994.html">1994 Rabaul Volcanic Eruption</a></li>
+                        <li><a href="blog-posts/baining-fire-dance.html">The Baining Fire Dance</a></li>
                     </ul>
                 </div>
 
                 <div class="sidebar newsletter">
-                    <h3><i class="fas fa-envelope"></i> Get PNG Travel Deals</h3>
-                    <p>Subscribe for exclusive offers on volcano tours, Goroka Show packages, and cultural expeditions!</p>
+                    <h3><i class="fas fa-envelope"></i> Newsletter</h3>
+                    <p>Subscribe for travel inspiration and exclusive offers!</p>
                     <form class="newsletter-form" action="#" method="post">
-                        <input type="email" placeholder="Your email address" aria-label="Email for PNG travel deals">
-                        <button type="submit">Subscribe Now</button>
+                        <input type="email" placeholder="Your email address" aria-label="Email address for newsletter">
+                        <button type="submit">Subscribe</button>
                     </form>
                 </div>
 
                 <div class="sidebar tags">
-                    <h3><i class="fas fa-tags"></i> Popular Travel Tags</h3>
+                    <h3><i class="fas fa-tags"></i> Popular Tags</h3>
                     <div class="tag-cloud" id="tagCloud"></div>
                 </div>
 
                 <div class="sidebar about-blog">
-                    <h3><i class="fas fa-info-circle"></i> About Bismark Touris Blog</h3>
-                    <p>Bismark Touris is the #1 premium travel agency in Papua New Guinea, specializing in luxury volcano tours, cultural expeditions, and adventure travel. Our blog features expert guides written by local specialists who know East New Britain and beyond. Discover authentic experiences from the Land of the Unexpected.</p>
-                    <a href="about.html" class="read-more">Learn About Our Premium Tours →</a>
+                    <h3><i class="fas fa-info-circle"></i> About This Blog</h3>
+                    <p>Bismark Touris shares expert travel guides, cultural insights, and adventure stories from Papua New Guinea. Our local team brings you authentic experiences from the Land of the Unexpected.</p>
+                    <a href="about.html" class="read-more">Learn More →</a>
                 </div>
             </aside>
         </div>
@@ -173,20 +299,28 @@
                 <a href="about.html">About Us</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
-                <a href="blog.html">Travel Blog</a>
+                <a href="blog.html">Our Blog</a>
                 <a href="sitemap.xml">Sitemap</a>
             </div>
 
             <div class="contact-frame">
                 <div class="contact-frame-header">
-                    <h3><i class="fas fa-phone-alt"></i> Book Your Premium PNG Adventure</h3>
+                    <h3><i class="fas fa-phone-alt"></i> We are reachable via:</h3>
                 </div>
                 <div class="contact-frame-content">
                     <div class="contact-frame-links">
-                        <a href="https://www.facebook.com/profile.php?id=100093034895584" class="contact-frame-btn" rel="noopener noreferrer" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-                        <a href="https://wa.me/67576769513" class="contact-frame-btn whatsapp" rel="noopener noreferrer" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                        <a href="tel:+67576769513" class="contact-frame-btn phone"><i class="fas fa-phone-alt"></i> Call Us</a>
-                        <a href="mailto:info@bismarktouris.com" class="contact-frame-btn email"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="https://www.facebook.com/profile.php?id=100093034895584" class="contact-frame-btn" rel="noopener noreferrer" target="_blank">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </a>
+                        <a href="https://wa.me/67576769513" class="contact-frame-btn whatsapp" rel="noopener noreferrer" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="tel:+67576769513" class="contact-frame-btn phone">
+                            <i class="fas fa-phone-alt"></i> Phone
+                        </a>
+                        <a href="mailto:info@bismarktouris.com" class="contact-frame-btn email">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
                     </div>
                     <div class="contact-frame-info">
                         <i class="fas fa-envelope"></i> info@bismarktouris.com &nbsp;|&nbsp; 
@@ -198,24 +332,26 @@
                 </div>
             </div>
 
-            <p>&copy; 2026 Bismark Touris — Papua New Guinea's #1 Premium Tour Operator. All rights reserved.</p>
+            <p>&copy; 2026 Bismark Touris. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
         // ============================================
-        // COMPLETE BLOG DATA - All blog posts
+        // BLOG DATA - All blog posts (add new entries here)
+        // New posts should be added at the TOP of the array
         // ============================================
         const blogPosts = [
+
             {
                 id: 23,
                 title: "Tufi's Tropical Fjords: Why Divers Keep Returning for Hammerheads and Moray Eels",
                 url: "blog-posts/tufi-fjords-hammerhead-sharks-moray-eels.html",
                 date: "April 1, 2026",
-                author: "Tour Guide",
+                author: "Tony Sena",
                 readTime: "9 min read",
                 category: "Diving",
-                tags: ["Tufi Fjords", "Hammerhead Sharks", "Moray Eels", "Oro Province", "Wall Diving", "PNG Diving"],
+                tags: ["Tufi Fjords", "Hammerhead Sharks", "Moray Eels", "Oro Province", "Wall Diving", "Pelagic Encounters", "PNG Diving"],
                 excerpt: "Discover why divers return again and again to Tufi's spectacular fjords in Oro Province. Complete guide to hammerhead sharks, giant moray eels, and world-class drop-off diving against a backdrop of tropical rainforest."
             },         
             {
@@ -223,65 +359,65 @@
                 title: "Lark Force Wilderness Track: Trekking East New Britain's Historic WWII Trail",
                 url: "blog-posts/lark-force-wilderness-track-east-new-britain.html",
                 date: "March 31, 2026",
-                author: "Tour Guide",
+                author: "Adolf Pidik",
                 readTime: "10 min read",
                 category: "Trekking",
-                tags: ["Lark Force", "Wilderness Trek", "WWII History", "East New Britain", "Mt Tavurvur", "Japanese Tunnels"],
-                excerpt: "Trek the Lark Force Wilderness Track through East New Britain's rainforest, past volcanoes and Japanese tunnels. Complete guide to hiking the historic WWII trail with premium guided tours."
+                tags: ["Lark Force", "Wilderness Trek", "WWII History", "East New Britain", "Mt Tavurvur", "Japanese Tunnels", "Volcano Trekking"],
+                excerpt: "Trek the Lark Force Wilderness Track through East New Britain's rainforest, past volcanoes and Japanese tunnels. Complete guide to hiking the historic WWII trail that Australian soldiers crossed in 1942."
             },
             {
                 id: 21,
                 title: "Muck Diving in Milne Bay: The Original Site That Put Papua New Guinea on the Diving Map",
                 url: "blog-posts/muck-diving-milne-bay-original-png.html",
                 date: "March 30, 2026",
-                author: "Tour Guide",
+                author: "Iyope Auwao",
                 readTime: "9 min read",
                 category: "Diving",
-                tags: ["Muck Diving", "Milne Bay", "Critter Hunting", "Macro Photography"],
-                excerpt: "Experience the original muck diving in Milne Bay Province - the destination that put Papua New Guinea on the global diving map. Complete guide to critter hunting, macro photography, and premium dive sites."
+                tags: ["Muck Diving", "Milne Bay", "Critter Hunting", "Macro Photography", "Tawali Resort", "Underwater Photography"],
+                excerpt: "Experience the original muck diving in Milne Bay Province - the destination that put Papua New Guinea on the global diving map. Complete guide to critter hunting, macro photography, dive sites, and luxury accommodations."
             },
             {
                 id: 20,
                 title: "Luxury Boat Tours with Melanesian Tourist Services: Madang's Premier Marine Experiences",
                 url: "blog-posts/luxury-boat-tours-melanesian-tourist-services-madang.html",
                 date: "March 29, 2026",
-                author: "Tour Guide",
+                author: "Iyope Auwao",
                 readTime: "8 min read",
                 category: "Luxury Travel",
-                tags: ["Luxury Travel", "Boat Tours", "Madang", "Diving", "Island Hopping", "Goroka Show"],
-                excerpt: "Discover Papua New Guinea's stunning coastline with luxury boat tours. Complete guide to private yacht charters, island cruises, diving expeditions, and Goroka Show 2026 combinations."
+                tags: ["Luxury Travel", "Boat Tours", "Melanesian Tourist Services", "Madang", "Diving", "Island Hopping", "Goroka Show"],
+                excerpt: "Discover Papua New Guinea's stunning coastline with luxury boat tours from Melanesian Tourist Services in Madang. Complete guide to private yacht charters, island cruises, diving expeditions, and Goroka Show 2026 combinations."
             },
             {
                 id: 19,
                 title: "Bird Watching in Western Province: Exploring PNG's Bird Diversity Capital",
                 url: "blog-posts/bird-watching-western-province-ecoregions.html",
                 date: "March 28, 2026",
-                author: "Tour Guide",
+                author: "Iyope Auwao",
                 readTime: "10 min read",
                 category: "Wildlife",
-                tags: ["Bird Watching", "Western Province", "Kiunga", "Birds of Paradise"],
-                excerpt: "Discover Western Province ecoregions, home to over 50% of Papua New Guinea's bird species. Complete guide to Kiunga, Tabubil, and Trans-Fly birding with Raggiana Bird of Paradise and crowned pigeons."
+                tags: ["Bird Watching", "Western Province", "Kiunga", "Trans-Fly", "Birds of Paradise", "Lowland Rainforest"],
+                excerpt: "Discover Western Province ecoregions, home to over 50% of Papua New Guinea's bird species. Complete guide to Kiunga, Tabubil, and Trans-Fly birding with Raggiana Bird of Paradise, crowned pigeons, and Goroka Show 2026 combinations."
             },
             {
                 id: 18,
                 title: "Bird Watching Safari with Walindi Plantation Resort: Huon Peninsula's Endemic Bird Paradise",
                 url: "blog-posts/bird-watching-walindi-huon-peninsula.html",
                 date: "March 27, 2026",
-                author: "Tour Guide",
+                author: "Iyope Auwao",
                 readTime: "8 min read",
                 category: "Wildlife",
-                tags: ["Bird Watching", "Walindi Plantation Resort", "Huon Peninsula", "Endemic Birds"],
-                excerpt: "Experience the ultimate bird watching safari to Huon Peninsula. Complete guide to endemic species like Huon Astrapia, Wahnes's Parotia, and Goroka Show 2026 combinations."
+                tags: ["Bird Watching", "Walindi Plantation Resort", "Huon Peninsula", "Endemic Birds", "Morobe Province", "Birding Safari"],
+                excerpt: "Experience the ultimate bird watching safari to Huon Peninsula with Walindi Plantation Resort. Complete guide to endemic species like Huon Astrapia, Wahnes's Parotia, and Goroka Show 2026 combinations."
             },
             {
                 id: 17,
                 title: "Bird Watching at Ambua Lodge: Papua New Guinea's Premier Birding Paradise",
                 url: "blog-posts/bird-watching-ambua-lodge-hela-province.html",
                 date: "March 26, 2026",
-                author: "Tour Guide",
+                author: "Iyope Auwao",
                 readTime: "9 min read",
                 category: "Wildlife",
-                tags: ["Bird Watching", "Birds of Paradise", "Ambua Lodge", "Hela Province"],
+                tags: ["Bird Watching", "Birds of Paradise", "Ambua Lodge", "Hela Province", "Wildlife Photography"],
                 excerpt: "Discover the ultimate bird watching experience at Ambua Lodge in Hela Province. Complete guide to Birds of Paradise, endemic species, photography tours, and Goroka Show 2026 combinations."
             },
             {
@@ -289,44 +425,44 @@
                 title: "Mount Wilhelm Trekking & Goroka Show 2026: The Ultimate Papua New Guinea Adventure",
                 url: "blog-posts/mount-wilhelm-trekking-goroka-show-2026.html",
                 date: "March 25, 2026",
-                author: "Tour Guide",
+                author: "Iyope Auwao",
                 readTime: "8 min read",
                 category: "Trekking",
                 tags: ["Mount Wilhelm", "Trekking", "Goroka Show", "Adventure Travel"],
-                excerpt: "Combine Mount Wilhelm trekking with Goroka Show 2026. Complete guide to climbing PNG's highest peak, expert tips, guided expeditions, and cultural festival experience."
+                excerpt: "Combine Mount Wilhelm trekking with Goroka Show 2026. Complete guide to climbing PNG's highest peak, expert tips, guided expeditions, and cultural festival experience. Book your premium mountain trek today."
             },
             {
                 id: 15,
                 title: "The Asaro Mudmen at Goroka Show 2026: Visitor's Guide to PNG's Ghostly Warriors",
                 url: "blog-posts/asaro-mudmen-goroka-show.html",
                 date: "March 25, 2026",
-                author: "Tour Guide",
+                author: "Iyope Auwao",
                 readTime: "7 min read",
                 category: "Cultural Festival",
-                tags: ["Asaro Mudmen", "Goroka Show", "Eastern Highlands", "Tribal Culture"],
-                excerpt: "Experience the legendary Asaro Mudmen at Goroka Show 2026! Complete visitor guide to Papua New Guinea's most iconic tribal performers."
+                tags: ["Asaro Mudmen", "Goroka Show", "Eastern Highlands", "Tribal Culture", "Sing-sing"],
+                excerpt: "Experience the legendary Asaro Mudmen at Goroka Show 2026! Complete visitor guide to Papua New Guinea's most iconic tribal performers. Learn about the legend, where to see them, and how to plan your cultural adventure."
             },
             {
                 id: 14,
                 title: "Lae War Memorial: A Sacred Tribute to PNG's WWII Heroes",
                 url: "blog-posts/lae-war-memorial.html",
                 date: "March 25, 2026",
-                author: "Tour Guide",
+                author: "James Waninara",
                 readTime: "6 min read",
                 category: "History",
                 tags: ["Lae", "War Memorial", "WWII", "Morobe Province"],
-                excerpt: "Discover the Lae War Memorial - a solemn tribute to Allied soldiers who fought in the Pacific War. Complete visitor guide, history, location, and travel tips."
+                excerpt: "Discover the Lae War Memorial - a solemn tribute to Allied soldiers who fought in the Pacific War. Complete visitor guide, history, location, and travel tips for this sacred site in Morobe Province."
             },
             {
                 id: 1,
                 title: "Goroka Show 2026: September 11–13 — Complete Guide to PNG's Most Spectacular Tribal Gathering",
                 url: "blog-posts/goroka-show-2026.html",
                 date: "March 24, 2026",
-                author: "Tour Guide",
+                author: "Emmanuel Marosi",
                 readTime: "10 min read",
                 category: "Cultural Festival",
                 tags: ["Goroka Show", "Cultural Festival", "Highlands"],
-                excerpt: "Papua New Guinea's most spectacular tribal gathering returns September 11–13, 2026! Over 100 tribes gather in the Eastern Highlands for three days of traditional sing-sings, elaborate body paint, and ancient ceremonies.",
+                excerpt: "Papua New Guinea's most spectacular tribal gathering returns September 11–13, 2026! Over 100 tribes gather in the Eastern Highlands for three days of traditional sing-sings, elaborate body paint, and ancient ceremonies. Complete guide with dates, travel tips, and accommodation advice.",
                 featured: true
             },
             {
@@ -334,18 +470,18 @@
                 title: "Village Homestays in Tufi: The Ultimate Guide to Authentic PNG Cultural Experiences",
                 url: "blog-posts/village-homestays-tufi.html",
                 date: "March 24, 2026",
-                author: "Tour Guide",
+                author: "Maria Tore",
                 readTime: "8 min read",
                 category: "Cultural Experiences",
                 tags: ["Tufi", "Homestays", "Culture"],
-                excerpt: "Experience authentic village life in the stunning Tufi Fjords. Complete guide to homestays, cultural immersion, traditional hospitality, and what to expect when staying with local families."
+                excerpt: "Experience authentic village life in the stunning Tufi Fjords. Complete guide to homestays, cultural immersion, traditional hospitality, and what to expect when staying with local families in Oro Province."
             },
             {
                 id: 3,
                 title: "Hiking the Kokoda Trail Cost 2026: Complete Guide to Trekking Prices & Budget Planning",
                 url: "blog-posts/kokoda-trail-cost.html",
                 date: "March 24, 2026",
-                author: "Tour Guide",
+                author: "John Kila",
                 readTime: "9 min read",
                 category: "Trekking",
                 tags: ["Kokoda Trail", "Trekking", "Budget"],
@@ -356,7 +492,7 @@
                 title: "Bird of Paradise Watching Tours PNG: The Ultimate Guide to Nature's Most Spectacular Dancers",
                 url: "blog-posts/bird-of-paradise.html",
                 date: "March 24, 2026",
-                author: "Tour Guide",
+                author: "Sarah Wani",
                 readTime: "10 min read",
                 category: "Wildlife",
                 tags: ["Bird of Paradise", "Wildlife", "Photography"],
@@ -367,18 +503,18 @@
                 title: "PNG Diving Liveaboards: The Ultimate Guide to Papua New Guinea's Underwater Paradise",
                 url: "blog-posts/png-diving-liveaboards.html",
                 date: "March 24, 2026",
-                author: "Tour Guide",
+                author: "Xavier David",
                 readTime: "12 min read",
                 category: "Diving",
                 tags: ["Diving", "Liveaboards", "Marine Life"],
-                excerpt: "Complete guide to liveaboard diving in Papua New Guinea. Best vessels, itineraries, marine life encounters, diving seasons, and expert tips."
+                excerpt: "Complete guide to liveaboard diving in Papua New Guinea. Best vessels, itineraries, marine life encounters, diving seasons, and expert tips for the world's most biodiverse underwater destination."
             },
             {
                 id: 6,
                 title: "Kokoda Track Trekking: The Ultimate Guide to PNG's Historic Trail of Courage",
                 url: "blog-posts/kokoda-track-trekking.html",
                 date: "March 24, 2026",
-                author: "Tour Guide",
+                author: "Emmanuel Marosi",
                 readTime: "11 min read",
                 category: "Trekking",
                 tags: ["Kokoda Trail", "History", "Trekking"],
@@ -389,7 +525,7 @@
                 title: "The Baining Fire Dance: Walking Through Embers Under Moonlight",
                 url: "blog-posts/baining-fire-dance.html",
                 date: "March 24, 2026",
-                author: "Tour Guide",
+                author: "Maria Tore",
                 readTime: "7 min read",
                 category: "Cultural Experiences",
                 tags: ["Baining", "Fire Dance", "Culture"],
@@ -400,7 +536,7 @@
                 title: "The Day the Earth Roared: Remembering the 1994 Rabaul Volcanic Eruption",
                 url: "blog-posts/rabaul-volcanic-eruption-1994.html",
                 date: "March 15, 2026",
-                author: "Tour Guide",
+                author: "Emmanuel Marosi",
                 readTime: "12 min read",
                 category: "History",
                 tags: ["Rabaul", "Volcano", "History"],
@@ -411,7 +547,7 @@
                 title: "Exploring the Active Volcano: A Visit to Mt. Tavurvur",
                 url: "blog-posts/mt-tavurvur.html",
                 date: "March 10, 2026",
-                author: "Tour Guide",
+                author: "Xavier David",
                 readTime: "6 min read",
                 category: "Volcano",
                 tags: ["Tavurvur", "Volcano", "Rabaul"],
@@ -422,7 +558,7 @@
                 title: "The Hidden History: Exploring WWII Japanese Tunnels",
                 url: "blog-posts/wwii-japanese-tunnels.html",
                 date: "March 5, 2026",
-                author: "Tour Guide",
+                author: "John Kila",
                 readTime: "5 min read",
                 category: "History",
                 tags: ["WWII", "Tunnels", "Rabaul"],
@@ -433,7 +569,7 @@
                 title: "Welcoming Cruise Ship Visitors: A Day in Kokopo",
                 url: "blog-posts/cruise-ship-kokopo.html",
                 date: "February 28, 2026",
-                author: "Tour Guide",
+                author: "Sarah Wani",
                 readTime: "5 min read",
                 category: "Travel Tips",
                 tags: ["Cruise", "Kokopo", "Travel Tips"],
@@ -444,7 +580,7 @@
                 title: "A Journey to Bitapaka War Cemetery: Remembering Heroes",
                 url: "blog-posts/bitapaka-war-cemetery.html",
                 date: "February 20, 2026",
-                author: "Tour Guide",
+                author: "Emmanuel Marosi",
                 readTime: "4 min read",
                 category: "History",
                 tags: ["Bitapaka", "War Cemetery", "WWII"],
@@ -455,7 +591,7 @@
                 title: "Supporting Local Communities: Our School Visits",
                 url: "blog-posts/school-visits.html",
                 date: "February 15, 2026",
-                author: "Tour Guide",
+                author: "Maria Tore",
                 readTime: "5 min read",
                 category: "Cultural Experiences",
                 tags: ["Community", "School Visits", "Giving Back"],
@@ -469,16 +605,19 @@
         let currentCategory = null;
         let currentSearchTerm = "";
 
-        // Get filtered posts
+        // Get filtered posts based on category and search
         function getFilteredPosts() {
             let filtered = [...blogPosts];
             
+            // Filter by category (exclude featured post from category filtering for main list)
             if (currentCategory) {
                 filtered = filtered.filter(post => post.category === currentCategory && !post.featured);
             } else {
+                // Exclude featured post from main list
                 filtered = filtered.filter(post => !post.featured);
             }
             
+            // Filter by search term
             if (currentSearchTerm) {
                 const searchLower = currentSearchTerm.toLowerCase();
                 filtered = filtered.filter(post => 
@@ -488,7 +627,9 @@
                 );
             }
             
+            // Sort by date (newest first)
             filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
             return filtered;
         }
 
@@ -497,19 +638,15 @@
             const filtered = getFilteredPosts();
             const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
             const endIndex = startIndex + POSTS_PER_PAGE;
+            const paginatedPosts = filtered.slice(startIndex, endIndex);
+            const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
+            
             return {
-                posts: filtered.slice(startIndex, endIndex),
-                totalPages: Math.ceil(filtered.length / POSTS_PER_PAGE),
+                posts: paginatedPosts,
+                totalPages: totalPages,
                 totalPosts: filtered.length,
                 currentPage: currentPage
             };
-        }
-
-        // Escape HTML
-        function escapeHtml(str) {
-            const div = document.createElement('div');
-            div.textContent = str;
-            return div.innerHTML;
         }
 
         // Render blog posts
@@ -518,11 +655,14 @@
             const { posts, totalPages, totalPosts, currentPage: page } = getPaginatedPosts();
             const pageInfo = document.getElementById('pageInfo');
             
+            // Update page info
             if (totalPosts === 0) {
-                pageInfo.innerHTML = '<p>No blog posts found. Try a different search or category.</p>';
+                pageInfo.innerHTML = '<p>No blog posts found.</p>';
                 container.innerHTML = '<div class="blog-post"><p>No posts match your criteria. Try a different search or category.</p></div>';
             } else {
                 pageInfo.innerHTML = `<p>Showing ${((page - 1) * POSTS_PER_PAGE) + 1}-${Math.min(page * POSTS_PER_PAGE, totalPosts)} of ${totalPosts} posts</p>`;
+                
+                // Render posts
                 container.innerHTML = posts.map(post => `
                     <article class="blog-post">
                         <h2><a href="${escapeHtml(post.url)}">${escapeHtml(post.title)}</a></h2>
@@ -537,36 +677,58 @@
                     </article>
                 `).join('');
             }
+            
             renderPagination(totalPages);
         }
 
-        // Render pagination
+        // Render pagination controls
         function renderPagination(totalPages) {
             const paginationContainer = document.getElementById('paginationControls');
+            
             if (totalPages <= 1) {
                 paginationContainer.innerHTML = '';
                 return;
             }
             
-            let paginationHtml = `<button class="pagination-btn" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}><i class="fas fa-chevron-left"></i> Previous</button>`;
+            let paginationHtml = `
+                <button class="pagination-btn" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+            `;
             
+            // Page numbers
             for (let i = 1; i <= totalPages; i++) {
                 if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
-                    paginationHtml += `<button class="page-number ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+                    paginationHtml += `
+                        <button class="page-number ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">
+                            ${i}
+                        </button>
+                    `;
                 } else if (i === currentPage - 2 || i === currentPage + 2) {
                     paginationHtml += `<span class="pagination-ellipsis">...</span>`;
                 }
             }
             
-            paginationHtml += `<button class="pagination-btn" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>Next <i class="fas fa-chevron-right"></i></button>`;
+            paginationHtml += `
+                <button class="pagination-btn" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            `;
+            
             paginationContainer.innerHTML = paginationHtml;
         }
 
-        // Update category counts
+        // Update category counts in sidebar
         function updateCategoryCounts() {
             const categories = {
-                'Cultural Festival': 0, 'Trekking': 0, 'Diving': 0, 'Wildlife': 0,
-                'History': 0, 'Cultural Experiences': 0, 'Volcano': 0, 'Travel Tips': 0
+                'Cultural Festival': 0,
+                'Trekking': 0,
+                'Diving': 0,
+                'Wildlife': 0,
+                'History': 0,
+                'Cultural Experiences': 0,
+                'Volcano': 0,
+                'Travel Tips': 0
             };
             
             blogPosts.forEach(post => {
@@ -597,9 +759,13 @@
             });
             
             const sortedTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 15);
-            const tagCloudHtml = sortedTags.map(([tag, count]) => `<a href="#" class="tag" data-tag="${tag}">${tag} (${count})</a>`).join('');
+            const tagCloudHtml = sortedTags.map(([tag, count]) => 
+                `<a href="#" class="tag" data-tag="${tag}">${tag} (${count})</a>`
+            ).join('');
+            
             document.getElementById('tagCloud').innerHTML = tagCloudHtml;
             
+            // Add click handlers to tags
             document.querySelectorAll('.tag').forEach(tagLink => {
                 tagLink.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -611,7 +777,14 @@
             });
         }
 
-        // Navigation
+        // Escape HTML to prevent XSS
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // Navigation functions
         window.goToPage = function(page) {
             const { totalPages } = getPaginatedPosts();
             if (page >= 1 && page <= totalPages) {
@@ -623,6 +796,7 @@
 
         // Initialize event listeners
         function initEventListeners() {
+            // Category filters
             document.querySelectorAll('.categories-list a').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -632,11 +806,14 @@
                     document.getElementById('searchInput').value = "";
                     currentPage = 1;
                     renderBlogPosts();
+                    
+                    // Update active state
                     document.querySelectorAll('.categories-list a').forEach(a => a.classList.remove('active'));
                     if (currentCategory) link.classList.add('active');
                 });
             });
             
+            // Search functionality
             const searchInput = document.getElementById('searchInput');
             const searchForm = document.getElementById('searchForm');
             
@@ -654,11 +831,13 @@
             });
             
             searchInput.addEventListener('keyup', (e) => {
-                if (e.key === 'Enter') performSearch();
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
             });
         }
 
-        // Initialize
+        // Initialize the blog
         function init() {
             updateCategoryCounts();
             renderTagCloud();
@@ -666,6 +845,7 @@
             initEventListeners();
         }
         
+        // Start the app
         init();
     </script>
 </body>
