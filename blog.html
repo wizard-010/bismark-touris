@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
-    <!-- Canonical URL - prevents duplicate content issues -->
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://wizard-010.github.io/bismark-touris/blog.html">
     
     <!-- Primary Meta Tags -->
@@ -111,15 +111,21 @@
     </nav>
 
     <main>
-        <!-- Featured Post Section -->
-        <section class="featured-post-section" aria-label="Featured Article">
-            <div class="featured-post" id="featuredPost">
-                <!-- JavaScript will populate featured post -->
+        <!-- Featured Post Section - matches blog post container styling -->
+        <div class="blog-post-container" id="featuredPostContainer">
+            <div class="blog-post-header">
+                <div class="featured-badge">
+                    <i class="fas fa-star" style="color: #ffc107;"></i> Featured Article
+                </div>
+                <h1 class="blog-post-title" id="featuredTitle"></h1>
+                <div class="blog-post-meta" id="featuredMeta"></div>
             </div>
-        </section>
+            <div class="blog-post-content" id="featuredExcerpt"></div>
+            <div id="featuredButton"></div>
+        </div>
 
-        <h2>Latest Travel Stories from Papua New Guinea</h2>
-        <p>Read about our adventures, travel tips, and cultural insights from the beautiful East New Britain Province.</p>
+        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Latest Travel Stories</h2>
+        <p style="margin-bottom: 2rem;">Read about our adventures, travel tips, and cultural insights from the beautiful East New Britain Province.</p>
 
         <div class="blog-layout">
             <!-- Blog posts container - JavaScript will populate -->
