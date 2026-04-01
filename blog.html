@@ -111,7 +111,7 @@
             font-size: 0.9rem;
         }
         
-        .pagination-btn:hover {
+        .pagination-btn:hover:not(:disabled) {
             background: var(--accent-color);
             color: white;
         }
@@ -121,14 +121,10 @@
             color: white;
         }
         
-        .pagination-btn.disabled {
+        .pagination-btn.disabled,
+        .pagination-btn:disabled {
             opacity: 0.5;
             cursor: not-allowed;
-        }
-        
-        .pagination-btn.disabled:hover {
-            background: #e9ecef;
-            color: var(--text-color);
         }
         
         .page-number {
@@ -161,6 +157,67 @@
             padding: 0 0.5rem;
             color: var(--text-color);
         }
+
+        /* Blog Stats Bar */
+        .blog-stats-bar {
+            background: #f8f9fa;
+            border-radius: 50px;
+            padding: 0.8rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border: 1px solid #e9ecef;
+        }
+
+        .blog-stats {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .blog-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        .blog-stat i {
+            color: var(--accent-color);
+            font-size: 1rem;
+        }
+
+        .blog-stat strong {
+            color: var(--primary-color);
+        }
+
+        .blog-filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            color: var(--text-color);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
     </style>
 </head>
 <body>
@@ -175,7 +232,7 @@
                 <a href="index.html"><h1>Bismark Touris</h1></a>
                 <p>Your Trusted Partner in Tourism Since 2024</p>
             </div>
-            <div class="header-counter" id="visitorCountHeader"></div>
+            <div class="header-spacer"></div>
         </div>
     </header>
 
@@ -205,34 +262,28 @@
         <div class="blog-layout">
             <div class="blog-main">
                 
-                <!-- FEATURED POST SECTION - Always visible -->
-                <div class="featured-post">
-                    <div class="featured-card">
-                        <div class="featured-badge">FEATURED</div>
-                        <h2><a href="blog-posts/goroka-show-2026-dates.html">Goroka Show 2026: September 11–13 — Complete Guide to PNG's Most Spectacular Tribal Gathering</a></h2>
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar-alt"></i> March 24, 2026</span>
-                            <span><i class="far fa-clock"></i> 10 min read</span>
-                            <span><i class="fas fa-tag"></i> Cultural Festival</span>
-                        </div>
-                        <p>Papua New Guinea's most spectacular tribal gathering returns September 11–13, 2026! Over 100 tribes gather in the Eastern Highlands for three days of traditional sing-sings, elaborate body paint, and ancient ceremonies. Complete guide with dates, travel tips, and accommodation advice.</p>
-                        <a href="blog-posts/goroka-show-2026-dates.html" class="read-more">Read the Complete Guide →</a>
-                    </div>
+                <!-- FEATURED POST SECTION - Will be populated by JavaScript -->
+                <div id="featuredPostContainer" class="featured-post">
+                    <!-- Featured post will be loaded here -->
                 </div>
 
-                <!-- Page Info Display -->
-                <div class="page-info" id="pageInfo"></div>
-                
-                <!-- Loading Spinner -->
-                <div class="loading-spinner" id="loadingSpinner">
-                    <i class="fas fa-spinner"></i>
+                <!-- Blog Stats Bar -->
+                <div class="blog-stats-bar">
+                    <div class="blog-stats">
+                        <div class="blog-stat">
+                            <i class="fas fa-newspaper"></i> 
+                            Total Articles: <strong id="totalPostsCount">0</strong>
+                        </div>
+                    </div>
+                    <div class="blog-filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All Posts</button>
+                        <button class="filter-btn" data-filter="recent">Recent</button>
+                        <button class="filter-btn" data-filter="popular">Popular</button>
+                    </div>
                 </div>
                 
                 <!-- Blog Posts Container - Dynamically populated -->
-                <div id="blogPostsContainer" class="blog-posts-container"></div>
-                
-                <!-- Pagination Controls -->
-                <div id="paginationControls" class="pagination-controls"></div>
+                <div id="blogContainer"></div>
                 
             </div>
 
@@ -247,15 +298,13 @@
 
                 <div class="sidebar categories">
                     <h3><i class="fas fa-tags"></i> Categories</h3>
-                    <ul class="categories-list">
-                        <li><a href="#" data-category="Cultural Festival">Cultural Festivals</a> <span id="cat-cultural">(0)</span></li>
-                        <li><a href="#" data-category="Trekking">Trekking & Hiking</a> <span id="cat-trekking">(0)</span></li>
-                        <li><a href="#" data-category="Diving">Diving & Snorkeling</a> <span id="cat-diving">(0)</span></li>
-                        <li><a href="#" data-category="Wildlife">Bird Watching</a> <span id="cat-wildlife">(0)</span></li>
-                        <li><a href="#" data-category="History">WWII History</a> <span id="cat-history">(0)</span></li>
-                        <li><a href="#" data-category="Cultural Experiences">Local Experiences</a> <span id="cat-cultural-exp">(0)</span></li>
-                        <li><a href="#" data-category="Volcano">Volcanoes</a> <span id="cat-volcano">(0)</span></li>
-                        <li><a href="#" data-category="Travel Tips">Travel Tips</a> <span id="cat-travel">(0)</span></li>
+                    <ul class="categories-list" id="categoryList">
+                        <li><a href="#" data-category="volcano">🌋 Volcano Tours</a> <span id="cat-volcano">(0)</span></li>
+                        <li><a href="#" data-category="wwii">🪖 WWII History</a> <span id="cat-wwii">(0)</span></li>
+                        <li><a href="#" data-category="tips">✈️ Travel Tips</a> <span id="cat-tips">(0)</span></li>
+                        <li><a href="#" data-category="culture">🎭 Cultural Experiences</a> <span id="cat-culture">(0)</span></li>
+                        <li><a href="#" data-category="community">🤝 Community Stories</a> <span id="cat-community">(0)</span></li>
+                        <li><a href="#" data-category="beach">🏖️ Beach Destinations</a> <span id="cat-beach">(0)</span></li>
                     </ul>
                 </div>
 
@@ -273,7 +322,7 @@
                 <div class="sidebar newsletter">
                     <h3><i class="fas fa-envelope"></i> Newsletter</h3>
                     <p>Subscribe for travel inspiration and exclusive offers!</p>
-                    <form class="newsletter-form" action="#" method="post">
+                    <form class="newsletter-form" id="newsletterForm" action="#" method="post">
                         <input type="email" placeholder="Your email address" aria-label="Email address for newsletter">
                         <button type="submit">Subscribe</button>
                     </form>
@@ -336,7 +385,19 @@
         </div>
     </footer>
 
+    <!-- Hamburger Menu Script -->
+    <script>
+        const hamburgerToggle = document.getElementById('hamburgerToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (hamburgerToggle && navMenu) {
+            hamburgerToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+        }
+    </script>
+    
+    <!-- Blog JavaScript - Contains all 23 posts -->
     <script src="assets/blog.js"></script>
-
 </body>
 </html>
