@@ -111,73 +111,119 @@
     </nav>
 
     <main>
-        <!-- Featured Post Section - matches blog post container styling -->
-        <div class="blog-post-container" id="featuredPostContainer">
-            <div class="blog-post-header">
-                <div class="featured-badge">
-                    <i class="fas fa-star"></i> Featured Article
+        <!-- Welcome Hero Section -->
+        <div class="welcome-hero">
+            <div class="hero-icon">📖</div>
+            <h2>Welcome to Our Travel Stories</h2>
+            <p>Discover the hidden gems of Papua New Guinea through authentic tales from local guides, cultural insights, and adventure experiences.</p>
+        </div>
+
+        <!-- Bordered Container for All Blog Content -->
+        <div class="blog-border-wrapper">
+            <!-- Featured Post Section -->
+            <div class="blog-post-container" id="featuredPostContainer">
+                <div class="blog-post-header">
+                    <div class="featured-badge">
+                        <i class="fas fa-star"></i> Featured Article
+                    </div>
+                    <h1 class="blog-post-title" id="featuredTitle"></h1>
+                    <div class="blog-post-meta" id="featuredMeta"></div>
                 </div>
-                <h1 class="blog-post-title" id="featuredTitle"></h1>
-                <div class="blog-post-meta" id="featuredMeta"></div>
+                <div class="blog-post-content" id="featuredExcerpt"></div>
+                <div id="featuredButton"></div>
             </div>
-            <div class="blog-post-content" id="featuredExcerpt"></div>
-            <div id="featuredButton"></div>
+
+            <!-- Section Decoration -->
+            <div class="section-decoration">
+                <i class="fas fa-chevron-down"></i>
+                <span></span>
+                <i class="fas fa-newspaper"></i>
+                <span></span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="blog-stats-bar">
+                <div class="blog-stats">
+                    <div class="blog-stat">
+                        <i class="fas fa-pen-fancy"></i>
+                        <span><strong id="totalPostsCount">0</strong> Articles</span>
+                    </div>
+                    <div class="blog-stat">
+                        <i class="fas fa-tag"></i>
+                        <span><strong>6</strong> Categories</span>
+                    </div>
+                    <div class="blog-stat">
+                        <i class="fas fa-eye"></i>
+                        <span>Read by <strong>500+</strong> travelers</span>
+                    </div>
+                </div>
+                <div class="blog-filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="recent">Recent</button>
+                    <button class="filter-btn" data-filter="popular">Popular</button>
+                </div>
+            </div>
+
+            <!-- Blog Posts and Sidebar Row -->
+            <div class="row">
+                <div class="col-md-8" style="flex: 2; min-width: 250px;">
+                    <div class="blog-container" id="blogContainer"></div>
+                </div>
+                <div class="col-md-4" style="flex: 1; min-width: 250px;">
+                    <aside class="blog-sidebar" aria-label="Blog Sidebar">
+                        <div class="sidebar">
+                            <h3><i class="fas fa-search"></i> Search Stories</h3>
+                            <form action="#" method="get" id="searchForm" role="search">
+                                <input type="text" id="searchInput" placeholder="Search blog posts..." aria-label="Search blog posts">
+                            </form>
+                        </div>
+
+                        <div class="sidebar">
+                            <h3><i class="fas fa-tags"></i> Explore by Category</h3>
+                            <ul class="categories-list" id="categoryList">
+                                <li><a href="#" data-category="volcano">🌋 Volcano Tours</a> <span id="cat-volcano">(0)</span></li>
+                                <li><a href="#" data-category="wwii">🏛️ WWII History</a> <span id="cat-wwii">(0)</span></li>
+                                <li><a href="#" data-category="tips">💡 Travel Tips</a> <span id="cat-tips">(0)</span></li>
+                                <li><a href="#" data-category="culture">🎭 Cultural Experiences</a> <span id="cat-culture">(0)</span></li>
+                                <li><a href="#" data-category="community">🤝 Community Stories</a> <span id="cat-community">(0)</span></li>
+                                <li><a href="#" data-category="beach">🏖️ Beach Destinations</a> <span id="cat-beach">(0)</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar">
+                            <h3><i class="fas fa-fire"></i> Most Read</h3>
+                            <ul id="popularPosts">
+                                <li><a href="blog-posts/mt-tavurvur.html"><i class="fas fa-mountain"></i> Exploring the Active Volcano: Mt. Tavurvur</a></li>
+                                <li><a href="blog-posts/wwii-japanese-tunnels.html"><i class="fas fa-archway"></i> The Hidden History: WWII Japanese Tunnels</a></li>
+                                <li><a href="blog-posts/cruise-ship-kokopo.html"><i class="fas fa-ship"></i> Welcoming Cruise Ship Visitors to Kokopo</a></li>
+                                <li><a href="blog-posts/bitapaka-war-cemetery.html"><i class="fas fa-dove"></i> A Journey to Bitapaka War Cemetery</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar">
+                            <h3><i class="fas fa-envelope"></i> Get Travel Inspiration</h3>
+                            <p>Subscribe for exclusive travel tips and special offers!</p>
+                            <form class="newsletter-form" id="newsletterForm">
+                                <input type="email" placeholder="Your email address" required aria-label="Email address for newsletter">
+                                <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                            </form>
+                        </div>
+
+                        <div class="sidebar">
+                            <h3><i class="fas fa-cloud-sun"></i> Popular Tags</h3>
+                            <div class="tag-cloud" id="tagCloud"></div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
         </div>
 
-        <div class="services-section">
-            <p style="margin-bottom: 2rem;">Read about our adventures, travel tips, and cultural insights from the beautiful East New Britain Province.</p>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8" style="flex: 2; min-width: 250px;">
-                <div class="blog-container" id="blogContainer"></div>
-            </div>
-            <div class="col-md-4" style="flex: 1; min-width: 250px;">
-                <aside class="blog-sidebar" aria-label="Blog Sidebar">
-                    <div class="sidebar">
-                        <h3><i class="fas fa-search"></i> Search</h3>
-                        <form action="#" method="get" id="searchForm" role="search">
-                            <input type="text" id="searchInput" placeholder="Search blog posts..." aria-label="Search blog posts">
-                        </form>
-                    </div>
-
-                    <div class="sidebar">
-                        <h3><i class="fas fa-tags"></i> Categories</h3>
-                        <ul class="categories-list" id="categoryList">
-                            <li><a href="#" data-category="volcano">Volcano Tours</a> <span id="cat-volcano">(0)</span></li>
-                            <li><a href="#" data-category="wwii">WWII History</a> <span id="cat-wwii">(0)</span></li>
-                            <li><a href="#" data-category="tips">Travel Tips</a> <span id="cat-tips">(0)</span></li>
-                            <li><a href="#" data-category="culture">Cultural Experiences</a> <span id="cat-culture">(0)</span></li>
-                            <li><a href="#" data-category="community">Community Stories</a> <span id="cat-community">(0)</span></li>
-                            <li><a href="#" data-category="beach">Beach Destinations</a> <span id="cat-beach">(0)</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="sidebar">
-                        <h3><i class="fas fa-fire"></i> Popular Posts</h3>
-                        <ul id="popularPosts">
-                            <li><a href="blog-posts/mt-tavurvur.html">Exploring the Active Volcano: Mt. Tavurvur</a></li>
-                            <li><a href="blog-posts/wwii-japanese-tunnels.html">The Hidden History: WWII Japanese Tunnels</a></li>
-                            <li><a href="blog-posts/cruise-ship-kokopo.html">Welcoming Cruise Ship Visitors to Kokopo</a></li>
-                            <li><a href="blog-posts/bitapaka-war-cemetery.html">A Journey to Bitapaka War Cemetery</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="sidebar">
-                        <h3><i class="fas fa-envelope"></i> Newsletter</h3>
-                        <p>Subscribe for travel inspiration and exclusive offers!</p>
-                        <form class="newsletter-form" id="newsletterForm">
-                            <input type="email" placeholder="Your email address" required aria-label="Email address for newsletter">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-
-                    <div class="sidebar">
-                        <h3><i class="fas fa-tags"></i> Popular Tags</h3>
-                        <div class="tag-cloud" id="tagCloud"></div>
-                    </div>
-                </aside>
-            </div>
+        <!-- Travel Quote Section -->
+        <div class="info-box" style="text-align: center; margin-top: 2rem;">
+            <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent-color); opacity: 0.5;"></i>
+            <p style="font-style: italic; font-size: 1.1rem; margin: 1rem 0;">"The world is a book, and those who do not travel read only one page."</p>
+            <p style="font-size: 0.9rem;">- Let us help you write your Papua New Guinea adventure story</p>
         </div>
     </main>
 
