@@ -283,8 +283,9 @@
         </div>
     </footer>
 
-    <script>
-    
-    </script>
+    <script src="../assets/main.js"></script>
+<script src="../assets/blog.js"></script>
+
+
 </body>
 </html>
