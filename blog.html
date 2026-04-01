@@ -232,7 +232,7 @@
                 <a href="index.html"><h1>Bismark Touris</h1></a>
                 <p>Your Trusted Partner in Tourism Since 2024</p>
             </div>
-            <div class="header-spacer"></div>
+            <div class="header-counter" id="visitorCountHeader">
         </div>
     </header>
 
@@ -282,8 +282,14 @@
                     </div>
                 </div>
                 
+                <!-- Page Info Display - Shows "Showing X-Y of Z posts" -->
+                <div class="page-info" id="pageInfo"></div>
+                
                 <!-- Blog Posts Container - Dynamically populated -->
                 <div id="blogContainer"></div>
+                
+                <!-- Pagination Controls - Will be populated by JavaScript -->
+                <div id="paginationControls" class="pagination-controls"></div>
                 
             </div>
 
@@ -384,20 +390,10 @@
             <p>&copy; 2026 Bismark Touris. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Hamburger Menu Script -->
-    <script>
-        const hamburgerToggle = document.getElementById('hamburgerToggle');
-        const navMenu = document.getElementById('navMenu');
-        
-        if (hamburgerToggle && navMenu) {
-            hamburgerToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('show');
-            });
-        }
-    </script>
     
     <!-- Blog JavaScript - Contains all 23 posts -->
     <script src="assets/blog.js"></script>
+    <script src="assets/main.js"></script>
+    
 </body>
 </html>
