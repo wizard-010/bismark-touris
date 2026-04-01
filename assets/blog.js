@@ -9,29 +9,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ========== BLOG POSTS DATABASE (All 23 posts) ==========
     const allPosts = [
-        { title: "Exploring the Active Volcano: A Visit to Mt. Tavurvur", url: "blog-posts/mt-tavurvur.html", date: "March 15, 2026", readTime: "8 min", excerpt: "Standing at the foot of an active volcano is a humbling experience. Mt. Tavurvur, located just outside Rabaul, is one of Papua New Guinea's most iconic volcanic sites. The hike up to the observatory offers breathtaking views of the surrounding bay and the volcano's smoking crater. Local guides share stories of past eruptions and the resilience of the Rabaul community.", category: "volcano", tags: ["Volcano", "Mt Tavurvur", "Rabaul"], featured: true, dateSort: "2026-03-15" },
-        { title: "The Hidden History: Exploring WWII Japanese Tunnels", url: "blog-posts/wwii-japanese-tunnels.html", date: "March 5, 2026", readTime: "6 min", excerpt: "Beneath the hills of Rabaul lies a network of tunnels that tell a powerful story of World War II. These underground passages, carved by hand by Japanese soldiers, offer a glimpse into a challenging chapter of our history. Our guides lead you through the dark corridors, sharing firsthand accounts passed down through generations.", category: "wwii", tags: ["WWII History", "Rabaul", "Tunnels"], featured: false, dateSort: "2026-03-05" },
-        { title: "Welcoming Cruise Ship Visitors: A Day in Kokopo", url: "blog-posts/cruise-ship-kokopo.html", date: "February 22, 2026", readTime: "6 min", excerpt: "When a cruise ship docks at Simpson Harbour, it's always an exciting day in Kokopo. From traditional welcoming ceremonies to showcasing our best markets and attractions, here's what we share with our visitors from around the world. The vibrant energy of the local community shines through as we guide guests through the best experiences.", category: "tips", tags: ["Kokopo", "Cruise", "Travel Tips"], featured: false, dateSort: "2026-02-22" },
-        { title: "A Journey to Bitapaka War Cemetery: Remembering Heroes", url: "blog-posts/bitapaka-war-cemetery.html", date: "February 10, 2026", readTime: "4 min", excerpt: "Bitapaka War Cemetery is a place of quiet reflection and remembrance. As we walk among the graves of soldiers who fought in World War II, we honor their sacrifice and reflect on the importance of peace. This sacred site, maintained by the Commonwealth War Graves Commission, tells stories of courage and loss.", category: "wwii", tags: ["WWII History", "Bitapaka", "Rabaul"], featured: false, dateSort: "2026-02-10" },
-        { title: "Supporting Local Communities: Our School Visits", url: "blog-posts/school-visits.html", date: "January 28, 2026", readTime: "5 min", excerpt: "At Bismark Touris, we believe in giving back. One of our most meaningful initiatives is visiting local schools with our guests. From donating supplies to sharing cultural exchange, these moments create lasting connections. Our travelers leave with hearts full of gratitude after meeting the bright students of East New Britain.", category: "community", tags: ["Community", "Schools", "Giving Back"], featured: false, dateSort: "2026-01-28" },
-        { title: "Bird Watching in Western Province: Ecoregions Guide", url: "blog-posts/bird-watching-western-province-ecoregions.html", date: "March 28, 2026", readTime: "7 min", excerpt: "Western Province is home to some of the most diverse bird species in Papua New Guinea. From birds of paradise to rare parrots, discover the best spots for bird watching. Our expert guides know exactly where to find the elusive species that make this region a paradise for birders.", category: "tips", tags: ["Bird Watching", "Western Province", "Nature"], featured: false, dateSort: "2026-03-28" },
-        { title: "Bird Watching at Walindi: Huon Peninsula Adventures", url: "blog-posts/bird-watching-walindi-huon-peninsula.html", date: "March 27, 2026", readTime: "6 min", excerpt: "The Huon Peninsula offers incredible bird watching opportunities. Join us as we explore the forests and coastal areas teeming with unique bird species. From the majestic crowned pigeon to the colorful parrots, every turn reveals new wonders.", category: "tips", tags: ["Bird Watching", "Walindi", "Huon Peninsula"], featured: false, dateSort: "2026-03-27" },
-        { title: "Bird Watching at Ambua Lodge: Hela Province", url: "blog-posts/bird-watching-ambua-lodge-hela-province.html", date: "March 26, 2026", readTime: "6 min", excerpt: "Ambua Lodge is a premier destination for bird watchers. Located in the highlands of Hela Province, it offers access to some of Papua New Guinea's most spectacular birdlife. The lodge's elevated position provides breathtaking views and incredible birding opportunities.", category: "tips", tags: ["Bird Watching", "Ambua Lodge", "Hela"], featured: false, dateSort: "2026-03-26" },
-        { title: "Mount Wilhelm Trekking & Goroka Show 2026", url: "blog-posts/mount-wilhelm-trekking-goroka-show-2026.html", date: "March 25, 2026", readTime: "9 min", excerpt: "Combine the challenge of trekking Mount Wilhelm with the cultural spectacle of the Goroka Show. Here's everything you need to know for this incredible adventure. From altitude preparation to festival logistics, our comprehensive guide ensures you don't miss a moment.", category: "culture", tags: ["Mount Wilhelm", "Goroka Show", "Trekking"], featured: false, dateSort: "2026-03-25" },
-        { title: "Asaro Mudmen: The Legend Behind the Masks", url: "blog-posts/asaro-mudmen-goroka-show.html", date: "March 25, 2026", readTime: "5 min", excerpt: "The Asaro Mudmen are one of Papua New Guinea's most iconic cultural groups. Discover the legend behind the eerie masks and their performances at the Goroka Show. These traditional warriors share stories that have been passed down for centuries.", category: "culture", tags: ["Asaro Mudmen", "Culture", "Goroka"], featured: false, dateSort: "2026-03-25" },
-        { title: "Lae War Memorial: A Tribute to the Fallen", url: "blog-posts/lae-war-memorial.html", date: "March 25, 2026", readTime: "4 min", excerpt: "The Lae War Memorial stands as a tribute to those who served in World War II. Learn about its history and significance. This solemn site reminds us of the sacrifices made for freedom.", category: "wwii", tags: ["WWII History", "Lae", "War Memorial"], featured: false, dateSort: "2026-03-25" },
-        { title: "Goroka Show 2026 Dates & Schedule", url: "blog-posts/goroka-show-2026-dates.html", date: "March 24, 2026", readTime: "3 min", excerpt: "Mark your calendars! Here are the confirmed dates and schedule for the Goroka Show 2026. Plan your travel around the main events and cultural performances.", category: "culture", tags: ["Goroka Show", "Dates", "Schedule"], featured: false, dateSort: "2026-03-24" },
-        { title: "Village Homestays in Tufi: A Cultural Immersion", url: "blog-posts/village-homestays-tufi.html", date: "March 24, 2026", readTime: "7 min", excerpt: "Experience authentic Papua New Guinean culture with a village homestay in Tufi. Learn about traditions, food, and daily life. Wake up to the sound of the ocean and share meals with welcoming local families.", category: "culture", tags: ["Tufi", "Homestay", "Culture"], featured: false, dateSort: "2026-03-24" },
-        { title: "Kokoda Trail Cost: Budgeting Your Trek", url: "blog-posts/kokoda-trail-cost.html", date: "March 24, 2026", readTime: "6 min", excerpt: "Planning to trek the Kokoda Trail? Here's a detailed breakdown of costs, from permits to guides and accommodation. Make sure you're financially prepared for this once-in-a-lifetime journey.", category: "tips", tags: ["Kokoda Trail", "Budget", "Trekking"], featured: false, dateSort: "2026-03-24" },
-        { title: "Birds of Paradise: A Complete Guide", url: "blog-posts/bird-of-paradise.html", date: "March 24, 2026", readTime: "8 min", excerpt: "Papua New Guinea is home to over 40 species of birds of paradise. Learn where to see them and how to photograph these magnificent creatures. Our expert guides share tips for spotting the elusive Raggiana and King of Saxony birds.", category: "tips", tags: ["Birds of Paradise", "Wildlife", "Photography"], featured: false, dateSort: "2026-03-24" },
-        { title: "PNG Diving Liveaboards: The Ultimate Experience", url: "blog-posts/png-diving-liveaboards.html", date: "March 24, 2026", readTime: "7 min", excerpt: "Explore Papua New Guinea's underwater wonders with a diving liveaboard. From pristine reefs to WWII wrecks, here's what to expect. Experience the best dive sites in the Coral Triangle.", category: "beach", tags: ["Diving", "Liveaboard", "Underwater"], featured: false, dateSort: "2026-03-24" },
-        { title: "Kokoda Track Trekking: Essential Guide", url: "blog-posts/kokoda-track-trekking.html", date: "March 24, 2026", readTime: "10 min", excerpt: "Prepare for the Kokoda Track with this comprehensive guide covering fitness, gear, and what to expect on the journey. This historic trail offers both physical challenge and profound connection to Australian and PNG wartime history.", category: "tips", tags: ["Kokoda Trail", "Trekking", "Fitness"], featured: false, dateSort: "2026-03-24" },
-        { title: "Baining Fire Dance: A Spectacular Tradition", url: "blog-posts/baining-fire-dance.html", date: "March 24, 2026", readTime: "5 min", excerpt: "The Baining Fire Dance is a mesmerizing ritual from East New Britain. Learn about its cultural significance and where to witness it. This ancient tradition continues to captivate visitors from around the world.", category: "culture", tags: ["Baining", "Fire Dance", "East New Britain"], featured: false, dateSort: "2026-03-24" },
-        { title: "Rabaul Volcanic Eruption 1994: A Survivor's Story", url: "blog-posts/rabaul-volcanic-eruption-1994.html", date: "March 15, 2026", readTime: "8 min", excerpt: "The 1994 eruption of Rabaul's volcanoes changed the region forever. Hear stories of survival and resilience from local residents. This powerful account reminds us of nature's force and the strength of community.", category: "volcano", tags: ["Rabaul", "Volcano", "History"], featured: false, dateSort: "2026-03-15" },
-        { title: "Tufi Fjords: Hammerhead Sharks & Moray Eels", url: "blog-posts/tufi-fjords-hammerhead-sharks-moray-eels.html", date: "April 1, 2026", readTime: "6 min", excerpt: "Discover the underwater wonders of Tufi Fjords. From hammerhead sharks to colorful moray eels, the diving here is world-class. The pristine waters of this remote location offer encounters with marine life found nowhere else.", category: "beach", tags: ["Tufi", "Diving", "Sharks"], featured: true, dateSort: "2026-04-01" },
-        { title: "Lark Force Wilderness Track: East New Britain", url: "blog-posts/lark-force-wilderness-track-east-new-britain.html", date: "March 31, 2026", readTime: "7 min", excerpt: "The Lark Force Wilderness Track offers a challenging hike through East New Britain's jungle, following the footsteps of WWII soldiers. This historic trek combines adventure with profound historical significance.", category: "wwii", tags: ["Lark Force", "Hiking", "WWII History"], featured: false, dateSort: "2026-03-31" },
-        { title: "Muck Diving in Milne Bay: Original PNG", url: "blog-posts/muck-diving-milne-bay-original-png.html", date: "March 30, 2026", readTime: "6 min", excerpt: "Milne Bay is a paradise for muck diving enthusiasts. Discover rare critters and unique marine life in these pristine waters. Every dive reveals something new in this biodiversity hotspot.", category: "beach", tags: ["Muck Diving", "Milne Bay", "Marine Life"], featured: false, dateSort: "2026-03-30" },
-        { title: "Luxury Boat Tours with Melanesian Tourist Services", url: "blog-posts/luxury-boat-tours-melanesian-tourist-services-madang.html", date: "March 29, 2026", readTime: "5 min", excerpt: "Experience luxury boat tours in Madang with Melanesian Tourist Services. Explore islands, reefs, and coastal villages in style. This is the ultimate way to experience PNG's stunning coastline.", category: "tips", tags: ["Madang", "Boat Tours", "Luxury"], featured: false, dateSort: "2026-03-29" }
+        { title: "Exploring the Active Volcano: A Visit to Mt. Tavurvur", url: "blog-posts/mt-tavurvur.html", date: "March 15, 2026", readTime: "8 min read", excerpt: "Standing at the foot of an active volcano is a humbling experience. Mt. Tavurvur, located just outside Rabaul, is one of Papua New Guinea's most iconic volcanic sites. The hike up to the observatory offers breathtaking views of the surrounding bay and the volcano's smoking crater. Local guides share stories of past eruptions and the resilience of the Rabaul community.", category: "Volcano", tags: ["Volcano", "Mt Tavurvur", "Rabaul"], featured: false, dateSort: "2026-03-15" },
+        { title: "The Hidden History: Exploring WWII Japanese Tunnels", url: "blog-posts/wwii-japanese-tunnels.html", date: "March 5, 2026", readTime: "6 min read", excerpt: "Beneath the hills of Rabaul lies a network of tunnels that tell a powerful story of World War II. These underground passages, carved by hand by Japanese soldiers, offer a glimpse into a challenging chapter of our history. Our guides lead you through the dark corridors, sharing firsthand accounts passed down through generations.", category: "History", tags: ["WWII History", "Rabaul", "Tunnels"], featured: false, dateSort: "2026-03-05" },
+        { title: "Welcoming Cruise Ship Visitors: A Day in Kokopo", url: "blog-posts/cruise-ship-kokopo.html", date: "February 22, 2026", readTime: "6 min read", excerpt: "When a cruise ship docks at Simpson Harbour, it's always an exciting day in Kokopo. From traditional welcoming ceremonies to showcasing our best markets and attractions, here's what we share with our visitors from around the world. The vibrant energy of the local community shines through as we guide guests through the best experiences.", category: "Travel Tips", tags: ["Kokopo", "Cruise", "Travel Tips"], featured: false, dateSort: "2026-02-22" },
+        { title: "A Journey to Bitapaka War Cemetery: Remembering Heroes", url: "blog-posts/bitapaka-war-cemetery.html", date: "February 10, 2026", readTime: "4 min read", excerpt: "Bitapaka War Cemetery is a place of quiet reflection and remembrance. As we walk among the graves of soldiers who fought in World War II, we honor their sacrifice and reflect on the importance of peace. This sacred site, maintained by the Commonwealth War Graves Commission, tells stories of courage and loss.", category: "History", tags: ["WWII History", "Bitapaka", "Rabaul"], featured: false, dateSort: "2026-02-10" },
+        { title: "Supporting Local Communities: Our School Visits", url: "blog-posts/school-visits.html", date: "January 28, 2026", readTime: "5 min read", excerpt: "At Bismark Touris, we believe in giving back. One of our most meaningful initiatives is visiting local schools with our guests. From donating supplies to sharing cultural exchange, these moments create lasting connections. Our travelers leave with hearts full of gratitude after meeting the bright students of East New Britain.", category: "Cultural Experiences", tags: ["Community", "Schools", "Giving Back"], featured: false, dateSort: "2026-01-28" },
+        { title: "Bird Watching in Western Province: Ecoregions Guide", url: "blog-posts/bird-watching-western-province-ecoregions.html", date: "March 28, 2026", readTime: "7 min read", excerpt: "Western Province is home to some of the most diverse bird species in Papua New Guinea. From birds of paradise to rare parrots, discover the best spots for bird watching. Our expert guides know exactly where to find the elusive species that make this region a paradise for birders.", category: "Wildlife", tags: ["Bird Watching", "Western Province", "Nature"], featured: false, dateSort: "2026-03-28" },
+        { title: "Bird Watching at Walindi: Huon Peninsula Adventures", url: "blog-posts/bird-watching-walindi-huon-peninsula.html", date: "March 27, 2026", readTime: "6 min read", excerpt: "The Huon Peninsula offers incredible bird watching opportunities. Join us as we explore the forests and coastal areas teeming with unique bird species. From the majestic crowned pigeon to the colorful parrots, every turn reveals new wonders.", category: "Wildlife", tags: ["Bird Watching", "Walindi", "Huon Peninsula"], featured: false, dateSort: "2026-03-27" },
+        { title: "Bird Watching at Ambua Lodge: Hela Province", url: "blog-posts/bird-watching-ambua-lodge-hela-province.html", date: "March 26, 2026", readTime: "6 min read", excerpt: "Ambua Lodge is a premier destination for bird watchers. Located in the highlands of Hela Province, it offers access to some of Papua New Guinea's most spectacular birdlife. The lodge's elevated position provides breathtaking views and incredible birding opportunities.", category: "Wildlife", tags: ["Bird Watching", "Ambua Lodge", "Hela"], featured: false, dateSort: "2026-03-26" },
+        { title: "Mount Wilhelm Trekking & Goroka Show 2026", url: "blog-posts/mount-wilhelm-trekking-goroka-show-2026.html", date: "March 25, 2026", readTime: "9 min read", excerpt: "Combine the challenge of trekking Mount Wilhelm with the cultural spectacle of the Goroka Show. Here's everything you need to know for this incredible adventure. From altitude preparation to festival logistics, our comprehensive guide ensures you don't miss a moment.", category: "Trekking", tags: ["Mount Wilhelm", "Goroka Show", "Trekking"], featured: false, dateSort: "2026-03-25" },
+        { title: "Asaro Mudmen: The Legend Behind the Masks", url: "blog-posts/asaro-mudmen-goroka-show.html", date: "March 25, 2026", readTime: "5 min read", excerpt: "The Asaro Mudmen are one of Papua New Guinea's most iconic cultural groups. Discover the legend behind the eerie masks and their performances at the Goroka Show. These traditional warriors share stories that have been passed down for centuries.", category: "Cultural Festival", tags: ["Asaro Mudmen", "Culture", "Goroka"], featured: false, dateSort: "2026-03-25" },
+        { title: "Lae War Memorial: A Tribute to the Fallen", url: "blog-posts/lae-war-memorial.html", date: "March 25, 2026", readTime: "4 min read", excerpt: "The Lae War Memorial stands as a tribute to those who served in World War II. Learn about its history and significance. This solemn site reminds us of the sacrifices made for freedom.", category: "History", tags: ["WWII History", "Lae", "War Memorial"], featured: false, dateSort: "2026-03-25" },
+        { title: "Goroka Show 2026: September 11–13 — Complete Guide to PNG's Most Spectacular Tribal Gathering", url: "blog-posts/goroka-show-2026-dates.html", date: "March 24, 2026", readTime: "10 min read", excerpt: "Papua New Guinea's most spectacular tribal gathering returns September 11–13, 2026! Over 100 tribes gather in the Eastern Highlands for three days of traditional sing-sings, elaborate body paint, and ancient ceremonies. Complete guide with dates, travel tips, and accommodation advice.", category: "Cultural Festival", tags: ["Goroka Show", "Cultural Festival", "Highlands"], featured: true, dateSort: "2026-03-24" },
+        { title: "Village Homestays in Tufi: The Ultimate Guide to Authentic PNG Cultural Experiences", url: "blog-posts/village-homestays-tufi.html", date: "March 24, 2026", readTime: "8 min read", excerpt: "Experience authentic village life in the stunning Tufi Fjords. Complete guide to homestays, cultural immersion, traditional hospitality, and what to expect when staying with local families in Oro Province.", category: "Cultural Experiences", tags: ["Tufi", "Homestay", "Culture"], featured: false, dateSort: "2026-03-24" },
+        { title: "Hiking the Kokoda Trail Cost 2026: Complete Guide to Trekking Prices & Budget Planning", url: "blog-posts/kokoda-trail-cost.html", date: "March 24, 2026", readTime: "9 min read", excerpt: "Detailed breakdown of Kokoda Trail trekking costs. Compare budget vs premium operators, understand what's included, hidden expenses, and plan your budget for Papua New Guinea's historic trek.", category: "Trekking", tags: ["Kokoda Trail", "Trekking", "Budget"], featured: false, dateSort: "2026-03-24" },
+        { title: "Bird of Paradise Watching Tours PNG: The Ultimate Guide to Nature's Most Spectacular Dancers", url: "blog-posts/bird-of-paradise.html", date: "March 24, 2026", readTime: "10 min read", excerpt: "Complete guide to Bird of Paradise watching in Papua New Guinea. Best locations, species, seasons, photography tips, and expert advice for the world's premier birding destination.", category: "Wildlife", tags: ["Birds of Paradise", "Wildlife", "Photography"], featured: false, dateSort: "2026-03-24" },
+        { title: "PNG Diving Liveaboards: The Ultimate Guide to Papua New Guinea's Underwater Paradise", url: "blog-posts/png-diving-liveaboards.html", date: "March 24, 2026", readTime: "12 min read", excerpt: "Complete guide to liveaboard diving in Papua New Guinea. Best vessels, itineraries, marine life encounters, diving seasons, and expert tips for the world's most biodiverse underwater destination.", category: "Diving", tags: ["Diving", "Liveaboard", "Underwater"], featured: false, dateSort: "2026-03-24" },
+        { title: "Kokoda Track Trekking: The Ultimate Guide to PNG's Historic Trail of Courage", url: "blog-posts/kokoda-track-trekking.html", date: "March 24, 2026", readTime: "11 min read", excerpt: "Complete guide to trekking the Kokoda Track. History, fitness preparation, costs, best seasons, and what to expect on this 96km journey through Papua New Guinea's rugged Owen Stanley Range.", category: "Trekking", tags: ["Kokoda Trail", "History", "Trekking"], featured: false, dateSort: "2026-03-24" },
+        { title: "The Baining Fire Dance: Walking Through Embers Under Moonlight", url: "blog-posts/baining-fire-dance.html", date: "March 24, 2026", readTime: "7 min read", excerpt: "Step into the darkness of the Baining Mountains, where ancient spirits come alive through fire. A journey into one of Papua New Guinea's most sacred cultural ceremonies.", category: "Cultural Experiences", tags: ["Baining", "Fire Dance", "Culture"], featured: false, dateSort: "2026-03-24" },
+        { title: "The Day the Earth Roared: Remembering the 1994 Rabaul Volcanic Eruption", url: "blog-posts/rabaul-volcanic-eruption-1994.html", date: "March 15, 2026", readTime: "12 min read", excerpt: "September 19, 1994. The day twin volcanoes Vulcan and Tavurvur erupted simultaneously, forever changing the landscape of East New Britain and the lives of its people.", category: "Volcano", tags: ["Rabaul", "Volcano", "History"], featured: false, dateSort: "2026-03-15" },
+        { title: "Tufi Fjords: Hammerhead Sharks & Moray Eels", url: "blog-posts/tufi-fjords-hammerhead-sharks-moray-eels.html", date: "April 1, 2026", readTime: "6 min read", excerpt: "Discover the underwater wonders of Tufi Fjords. From hammerhead sharks to colorful moray eels, the diving here is world-class. The pristine waters of this remote location offer encounters with marine life found nowhere else.", category: "Diving", tags: ["Tufi", "Diving", "Sharks"], featured: false, dateSort: "2026-04-01" },
+        { title: "Lark Force Wilderness Track: East New Britain", url: "blog-posts/lark-force-wilderness-track-east-new-britain.html", date: "March 31, 2026", readTime: "7 min read", excerpt: "The Lark Force Wilderness Track offers a challenging hike through East New Britain's jungle, following the footsteps of WWII soldiers. This historic trek combines adventure with profound historical significance.", category: "History", tags: ["Lark Force", "Hiking", "WWII History"], featured: false, dateSort: "2026-03-31" },
+        { title: "Muck Diving in Milne Bay: Original PNG", url: "blog-posts/muck-diving-milne-bay-original-png.html", date: "March 30, 2026", readTime: "6 min read", excerpt: "Milne Bay is a paradise for muck diving enthusiasts. Discover rare critters and unique marine life in these pristine waters. Every dive reveals something new in this biodiversity hotspot.", category: "Diving", tags: ["Muck Diving", "Milne Bay", "Marine Life"], featured: false, dateSort: "2026-03-30" },
+        { title: "Luxury Boat Tours with Melanesian Tourist Services", url: "blog-posts/luxury-boat-tours-melanesian-tourist-services-madang.html", date: "March 29, 2026", readTime: "5 min read", excerpt: "Experience luxury boat tours in Madang with Melanesian Tourist Services. Explore islands, reefs, and coastal villages in style. This is the ultimate way to experience PNG's stunning coastline.", category: "Travel Tips", tags: ["Madang", "Boat Tours", "Luxury"], featured: false, dateSort: "2026-03-29" }
     ];
     
     // ========== SORT POSTS BY DATE (NEWEST FIRST) ==========
@@ -39,17 +39,35 @@ document.addEventListener('DOMContentLoaded', function() {
         return [...posts].sort((a, b) => {
             const dateA = new Date(a.dateSort || a.date);
             const dateB = new Date(b.dateSort || b.date);
-            return dateB - dateA; // Newest first
+            return dateB - dateA;
         });
     }
     
-    // Sort all posts by date (newest first)
     const sortedPosts = sortPostsByDate(allPosts);
     
-    // Find featured post (first post with featured: true from sorted list, or most recent if none)
+    // Find featured post
     let featuredPost = sortedPosts.find(post => post.featured === true);
     if (!featuredPost) {
         featuredPost = sortedPosts[0];
+    }
+    
+    // ========== RENDER FEATURED POST ==========
+    function renderFeaturedPost() {
+        if (!featuredContainer) return;
+        
+        featuredContainer.innerHTML = `
+            <div class="featured-card">
+                <div class="featured-badge">FEATURED</div>
+                <h2><a href="${featuredPost.url}">${escapeHtml(featuredPost.title)}</a></h2>
+                <div class="blog-meta">
+                    <span><i class="far fa-calendar-alt"></i> ${featuredPost.date}</span>
+                    <span><i class="far fa-clock"></i> ${featuredPost.readTime}</span>
+                    <span><i class="fas fa-tag"></i> ${featuredPost.category}</span>
+                </div>
+                <p>${escapeHtml(featuredPost.excerpt)}</p>
+                <a href="${featuredPost.url}" class="read-more">Read the Complete Guide →</a>
+            </div>
+        `;
     }
     
     // ========== UPDATE STATS BAR WITH TOTAL POSTS COUNT ==========
@@ -60,52 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // ========== RENDER FEATURED POST ==========
-    function renderFeaturedPost() {
-        if (!featuredContainer) return;
-        
-        const featuredTitle = document.getElementById('featuredTitle');
-        const featuredMeta = document.getElementById('featuredMeta');
-        const featuredExcerpt = document.getElementById('featuredExcerpt');
-        const featuredButton = document.getElementById('featuredButton');
-        
-        if (featuredTitle) {
-            featuredTitle.innerHTML = `<a href="${featuredPost.url}" style="color: inherit; text-decoration: none;">${escapeHtml(featuredPost.title)}</a>`;
-        }
-        
-        if (featuredMeta) {
-            featuredMeta.innerHTML = `
-                <span><i class="far fa-calendar-alt"></i> ${featuredPost.date}</span>
-                <span><i class="far fa-user"></i> By Local Guide</span>
-                <span><i class="far fa-clock"></i> ${featuredPost.readTime} read</span>
-                <span><i class="fas fa-tag"></i> ${getCategoryName(featuredPost.category)}</span>
-            `;
-        }
-        
-        if (featuredExcerpt) {
-            featuredExcerpt.innerHTML = `<p>${escapeHtml(featuredPost.excerpt)}</p>`;
-        }
-        
-        if (featuredButton) {
-            featuredButton.innerHTML = `<a href="${featuredPost.url}" class="read-more" style="display: inline-block; margin-top: 1rem;">Read Full Article <i class="fas fa-arrow-right"></i></a>`;
-        }
-    }
-    
-    function getCategoryName(category) {
-        const names = {
-            volcano: "Volcano Tours",
-            wwii: "WWII History",
-            tips: "Travel Tips",
-            culture: "Cultural Experiences",
-            community: "Community Stories",
-            beach: "Beach Destinations"
-        };
-        return names[category] || category;
-    }
-    
     // ========== PAGINATION VARIABLES ==========
     let currentPage = 1;
-    let currentCategory = "all";
+    let currentCategory = null;
     let currentSearch = "";
     const postsPerPage = 5;
     
@@ -115,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Exclude featured post from regular listing
         filtered = filtered.filter(post => post.url !== featuredPost.url);
         
-        if (currentCategory !== "all") {
+        if (currentCategory) {
             filtered = filtered.filter(post => post.category === currentCategory);
         }
         if (currentSearch !== "") {
@@ -130,48 +105,67 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function escapeHtml(str) {
-        return str.replace(/[&<>]/g, function(m) {
-            if (m === '&') return '&amp;';
-            if (m === '<') return '&lt;';
-            if (m === '>') return '&gt;';
-            return m;
-        });
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
     }
     
     function updateCategoryCounts() {
-        const categories = ["volcano", "wwii", "tips", "culture", "community", "beach"];
-        categories.forEach(cat => {
-            const count = sortedPosts.filter(post => post.category === cat).length;
-            const span = document.getElementById(`cat-${cat}`);
-            if (span) span.textContent = `(${count})`;
+        const categories = {
+            'Cultural Festival': 0,
+            'Trekking': 0,
+            'Diving': 0,
+            'Wildlife': 0,
+            'History': 0,
+            'Cultural Experiences': 0,
+            'Volcano': 0,
+            'Travel Tips': 0
+        };
+        
+        sortedPosts.forEach(post => {
+            if (post.url !== featuredPost.url && categories[post.category] !== undefined) {
+                categories[post.category]++;
+            }
         });
+        
+        document.getElementById('cat-cultural') && (document.getElementById('cat-cultural').textContent = `(${categories['Cultural Festival']})`);
+        document.getElementById('cat-trekking') && (document.getElementById('cat-trekking').textContent = `(${categories['Trekking']})`);
+        document.getElementById('cat-diving') && (document.getElementById('cat-diving').textContent = `(${categories['Diving']})`);
+        document.getElementById('cat-wildlife') && (document.getElementById('cat-wildlife').textContent = `(${categories['Wildlife']})`);
+        document.getElementById('cat-history') && (document.getElementById('cat-history').textContent = `(${categories['History']})`);
+        document.getElementById('cat-cultural-exp') && (document.getElementById('cat-cultural-exp').textContent = `(${categories['Cultural Experiences']})`);
+        document.getElementById('cat-volcano') && (document.getElementById('cat-volcano').textContent = `(${categories['Volcano']})`);
+        document.getElementById('cat-travel') && (document.getElementById('cat-travel').textContent = `(${categories['Travel Tips']})`);
     }
     
     function renderTagCloud() {
         const tagCount = {};
         sortedPosts.forEach(post => {
-            post.tags.forEach(tag => {
-                tagCount[tag] = (tagCount[tag] || 0) + 1;
-            });
+            if (post.url !== featuredPost.url) {
+                post.tags.forEach(tag => {
+                    tagCount[tag] = (tagCount[tag] || 0) + 1;
+                });
+            }
         });
+        
         const sortedTags = Object.entries(tagCount).sort((a, b) => b[1] - a[1]).slice(0, 15);
         const tagCloud = document.getElementById('tagCloud');
         if (tagCloud) {
             tagCloud.innerHTML = sortedTags.map(([tag, count]) => 
                 `<a href="#" class="tag" data-tag="${tag.toLowerCase()}">${tag} (${count})</a>`
             ).join('');
+            
             tagCloud.querySelectorAll('.tag').forEach(tagLink => {
                 tagLink.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const tag = tagLink.getAttribute('data-tag');
-                    if (tag) {
-                        currentSearch = tag;
-                        currentCategory = "all";
-                        currentPage = 1;
-                        const searchInput = document.getElementById('searchInput');
-                        if (searchInput) searchInput.value = tag;
-                        renderBlogPosts();
-                    }
+                    currentSearch = tagLink.getAttribute('data-tag');
+                    currentCategory = null;
+                    currentPage = 1;
+                    const searchInput = document.getElementById('searchInput');
+                    if (searchInput) searchInput.value = currentSearch;
+                    renderBlogPosts();
+                    
+                    document.querySelectorAll('.categories-list a').forEach(a => a.classList.remove('active'));
                 });
             });
         }
@@ -184,32 +178,33 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        let controls = '';
+        let controls = '<div class="pagination-controls">';
         if (currentPage > 1) {
-            controls += `<a href="#" class="page-prev" data-page="${currentPage - 1}" aria-label="Previous page"><i class="fas fa-chevron-left"></i> Prev</a>`;
+            controls += `<button class="pagination-btn" data-page="${currentPage - 1}"><i class="fas fa-chevron-left"></i> Previous</button>`;
         }
         for (let i = 1; i <= totalPages; i++) {
             if (i === currentPage) {
-                controls += `<a href="#" class="active" data-page="${i}">${i}</a>`;
+                controls += `<button class="page-number active" data-page="${i}">${i}</button>`;
             } else if (Math.abs(i - currentPage) <= 2 || i === 1 || i === totalPages) {
-                controls += `<a href="#" data-page="${i}">${i}</a>`;
+                controls += `<button class="page-number" data-page="${i}">${i}</button>`;
             } else if (Math.abs(i - currentPage) === 3) {
-                controls += `<span class="pagination-dots">...</span>`;
+                controls += `<span class="pagination-ellipsis">...</span>`;
             }
         }
         if (currentPage < totalPages) {
-            controls += `<a href="#" class="page-next" data-page="${currentPage + 1}" aria-label="Next page">Next <i class="fas fa-chevron-right"></i></a>`;
+            controls += `<button class="pagination-btn" data-page="${currentPage + 1}">Next <i class="fas fa-chevron-right"></i></button>`;
         }
+        controls += '</div>';
         
         controlsContainer.innerHTML = controls;
-        document.querySelectorAll('#paginationControls a[data-page]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const page = parseInt(link.getAttribute('data-page'));
+        
+        document.querySelectorAll('#paginationControls button[data-page]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const page = parseInt(btn.getAttribute('data-page'));
                 if (!isNaN(page) && page !== currentPage) {
                     currentPage = page;
                     renderBlogPosts();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    window.scrollTo({ top: 400, behavior: 'smooth' });
                 }
             });
         });
@@ -221,11 +216,20 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentPage > totalPages && totalPages > 0) currentPage = 1;
         
         const start = (currentPage - 1) * postsPerPage;
-        const end = start + postsPerPage;
-        const pagePosts = filteredPosts.slice(start, end);
+        const pagePosts = filteredPosts.slice(start, start + postsPerPage);
         
         const container = document.getElementById('blogContainer');
         if (!container) return;
+        
+        // Update page info
+        const pageInfo = document.getElementById('pageInfo');
+        if (pageInfo && filteredPosts.length > 0) {
+            const startNum = (currentPage - 1) * postsPerPage + 1;
+            const endNum = Math.min(currentPage * postsPerPage, filteredPosts.length);
+            pageInfo.innerHTML = `<p>Showing ${startNum}-${endNum} of ${filteredPosts.length} posts</p>`;
+        } else if (pageInfo) {
+            pageInfo.innerHTML = '<p>No blog posts found.</p>';
+        }
         
         let html = '';
         pagePosts.forEach(post => {
@@ -236,21 +240,25 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span><i class="far fa-calendar-alt"></i> ${post.date}</span>
                         <span><i class="far fa-user"></i> By Local Guide</span>
                         <span><i class="far fa-clock"></i> ${post.readTime}</span>
-                        <span class="blog-category"><i class="fas fa-tag"></i> ${getCategoryName(post.category)}</span>
+                        <span><i class="fas fa-tag"></i> ${post.category}</span>
                     </div>
-                    <p class="blog-excerpt">${escapeHtml(post.excerpt)}</p>
-                    <a href="${post.url}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    <p>${escapeHtml(post.excerpt)}</p>
+                    <a href="${post.url}" class="read-more">Read More →</a>
                 </article>
             `;
         });
         
         if (pagePosts.length === 0) {
-            html += '<p class="no-results">No blog posts found. Try a different search or category.</p>';
+            html = '<div class="blog-post"><p>No blog posts found. Try a different search or category.</p></div>';
         }
         
-        html += '<div class="pagination" id="paginationControls"></div>';
         container.innerHTML = html;
-        renderPaginationControls(totalPages);
+        
+        // Add pagination controls after the posts
+        const paginationContainer = document.getElementById('paginationControls');
+        if (paginationContainer) {
+            renderPaginationControls(totalPages);
+        }
     }
     
     // ========== FILTER BUTTONS FUNCTIONALITY ==========
@@ -262,27 +270,14 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.addEventListener('click', (e) => {
                 const filter = btn.getAttribute('data-filter');
                 
-                // Update active state
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 
-                // Apply filter
                 if (filter === 'all') {
-                    currentCategory = "all";
+                    currentCategory = null;
                     currentSearch = "";
                     const searchInput = document.getElementById('searchInput');
                     if (searchInput) searchInput.value = "";
-                } else if (filter === 'recent') {
-                    // Already showing newest first due to sorting
-                    currentCategory = "all";
-                    currentSearch = "";
-                    const searchInput = document.getElementById('searchInput');
-                    if (searchInput) searchInput.value = "";
-                } else if (filter === 'popular') {
-                    // For popular, we'll sort by a custom order or keep as is
-                    // You can implement a view count system later
-                    currentCategory = "all";
-                    currentSearch = "";
                 }
                 
                 currentPage = 1;
@@ -293,19 +288,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ========== EVENT LISTENERS ==========
     function setupEventListeners() {
-        const categoryLinks = document.querySelectorAll('#categoryList a[data-category]');
+        const categoryLinks = document.querySelectorAll('.categories-list a');
         categoryLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const category = link.getAttribute('data-category');
-                currentCategory = category;
+                currentCategory = category === currentCategory ? null : category;
                 currentSearch = "";
                 currentPage = 1;
                 const searchInput = document.getElementById('searchInput');
                 if (searchInput) searchInput.value = "";
                 renderBlogPosts();
                 
-                // Update filter buttons active state
+                categoryLinks.forEach(a => a.classList.remove('active'));
+                if (currentCategory) link.classList.add('active');
+                
                 const filterBtns = document.querySelectorAll('.filter-btn');
                 filterBtns.forEach(btn => {
                     if (btn.getAttribute('data-filter') === 'all') {
@@ -324,11 +321,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const searchInput = document.getElementById('searchInput');
                 if (searchInput) {
                     currentSearch = searchInput.value.trim();
-                    currentCategory = "all";
+                    currentCategory = null;
                     currentPage = 1;
                     renderBlogPosts();
                     
-                    // Update filter buttons active state
+                    document.querySelectorAll('.categories-list a').forEach(a => a.classList.remove('active'));
+                    
                     const filterBtns = document.querySelectorAll('.filter-btn');
                     filterBtns.forEach(btn => {
                         if (btn.getAttribute('data-filter') === 'all') {
