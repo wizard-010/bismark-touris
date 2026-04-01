@@ -1059,6 +1059,7 @@ footer {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
+    border: box
 }
 
 .blog-post {
@@ -1071,10 +1072,11 @@ footer {
 }
 
 .blog-post h2 {
-    color: var(--accent-color);
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.6rem;
+     background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
 }
 
 .blog-post h2 a {
