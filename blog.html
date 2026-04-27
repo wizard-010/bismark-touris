@@ -71,6 +71,52 @@
             margin-bottom: 2rem;
         }
         
+        .featured-card {
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1c2a 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .featured-badge {
+            background: var(--accent-color);
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-card h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-card h2 a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .featured-card h2 a:hover {
+            color: var(--accent-color);
+        }
+        
+        .featured-card .blog-meta {
+            color: #aaa;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-card .read-more {
+            background: var(--accent-color);
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        
+        .featured-card .read-more:hover {
+            background: #e55a2b;
+        }
+        
         /* Blog list items */
         .blog-post {
             border-bottom: 1px solid #e9ecef;
@@ -84,6 +130,33 @@
         
         .blog-post:last-child {
             border-bottom: none;
+        }
+        
+        .post-category {
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-badge {
+            background: #e9ecef;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--accent-color);
+        }
+        
+        .post-tags {
+            margin: 0.8rem 0;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .post-tag {
+            background: #f0f0f0;
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            color: #666;
         }
         
         /* Pagination controls */
@@ -218,6 +291,66 @@
             color: white;
             border-color: var(--accent-color);
         }
+        
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+        }
+        
+        .empty-state-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Tag cloud */
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tag {
+            background: #e9ecef;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        /* Newsletter form */
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .newsletter-form input {
+            padding: 0.6rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .newsletter-form button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.6rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .newsletter-form button:hover {
+            background: #e55a2b;
+        }
     </style>
 </head>
 <body>
@@ -232,7 +365,7 @@
                 <a href="index.html"><h1>Bismark Touris</h1></a>
                 <p>Your Trusted Partner in Tourism Since 2024</p>
             </div>
-            <div class="header-counter" id="visitorCountHeader">
+            <div class="header-counter" id="visitorCountHeader"></div>
         </div>
     </header>
 
@@ -277,8 +410,6 @@
                     </div>
                     <div class="blog-filter-buttons">
                         <button class="filter-btn active" data-filter="all">All Posts</button>
-                        <button class="filter-btn" data-filter="recent">Recent</button>
-                        <button class="filter-btn" data-filter="popular">Popular</button>
                     </div>
                 </div>
                 
@@ -305,12 +436,14 @@
                 <div class="sidebar categories">
                     <h3><i class="fas fa-tags"></i> Categories</h3>
                     <ul class="categories-list" id="categoryList">
-                        <li><a href="#" data-category="volcano">🌋 Volcano Tours</a> <span id="cat-volcano">(0)</span></li>
-                        <li><a href="#" data-category="wwii">🪖 WWII History</a> <span id="cat-wwii">(0)</span></li>
-                        <li><a href="#" data-category="tips">✈️ Travel Tips</a> <span id="cat-tips">(0)</span></li>
-                        <li><a href="#" data-category="culture">🎭 Cultural Experiences</a> <span id="cat-culture">(0)</span></li>
-                        <li><a href="#" data-category="community">🤝 Community Stories</a> <span id="cat-community">(0)</span></li>
-                        <li><a href="#" data-category="beach">🏖️ Beach Destinations</a> <span id="cat-beach">(0)</span></li>
+                        <li><a href="#" data-category="Cultural Festival">🎭 Cultural Festival</a> <span id="cat-cultural">(0)</span></li>
+                        <li><a href="#" data-category="Trekking">⛰️ Trekking</a> <span id="cat-trekking">(0)</span></li>
+                        <li><a href="#" data-category="Diving">🤿 Diving</a> <span id="cat-diving">(0)</span></li>
+                        <li><a href="#" data-category="Wildlife">🦜 Wildlife</a> <span id="cat-wildlife">(0)</span></li>
+                        <li><a href="#" data-category="History">🏛️ History</a> <span id="cat-history">(0)</span></li>
+                        <li><a href="#" data-category="Cultural Experiences">🎨 Cultural Experiences</a> <span id="cat-cultural-exp">(0)</span></li>
+                        <li><a href="#" data-category="Volcano">🌋 Volcano</a> <span id="cat-volcano">(0)</span></li>
+                        <li><a href="#" data-category="Travel Tips">✈️ Travel Tips</a> <span id="cat-travel">(0)</span></li>
                     </ul>
                 </div>
 
@@ -391,7 +524,7 @@
         </div>
     </footer>
     
-    <!-- Blog JavaScript - Contains all 23 posts -->
+    <!-- Blog JavaScript -->
     <script src="assets/blog.js"></script>
     <script src="assets/main.js"></script>
     
